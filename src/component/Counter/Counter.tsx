@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './styles.scss'
+import classes from  './styles.module.scss'
 const Counter = () => {
   const [count,setCount]=useState(0)
   return (
