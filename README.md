@@ -6,3 +6,4 @@ everything you to know that will be middle
 4. dev-server and add port,env (development and production usable)
 5. add eslint styles 
 6.add styles-loader, react,react-dom 
+7. add module css loader 
