@@ -5,8 +5,8 @@ const Counter = () => {
   return (
     <>
     <div>{count}</div>
-    <div className='btn' onClick={()=>setCount(count+1)}>increment</div>
-    <div className='btn' onClick={()=>setCount(count-1)}>decrement</div>
+    <div className={classes.btn} onClick={()=>setCount(count+1)}>increment</div>
+    <div className={classes.green} onClick={()=>setCount(count-1)}>decrement</div>
     </>
   )
 }
