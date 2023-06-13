@@ -7,3 +7,4 @@ everything you to know that will be middle
 5. add eslint styles 
 6.add styles-loader, react,react-dom 
 7. add module css loader 
+8.add react-router-dom lazy load suspense 
