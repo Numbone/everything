@@ -8,4 +8,5 @@ everything you to know that will be middle
 6.add styles-loader, react,react-dom 
 7. add module css loader 
 8.add react-router-dom lazy load suspense 
-9 add useTheme 
+9. add useTheme 
+10.add FSD architecture 
