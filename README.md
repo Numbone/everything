@@ -10,3 +10,4 @@ everything you to know that will be middle
 8.add react-router-dom lazy load suspense 
 9. add useTheme 
 10.add FSD architecture 
+11. add absolute url 
