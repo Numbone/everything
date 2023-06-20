@@ -9,14 +9,14 @@ import { useTheme } from "./providers/ThemeProvider";
 import { AboutPage } from "pages/AboutPage";
 import { MainPage } from "pages/MainPage";
 import { AppRouter } from "./providers/Providers/router";
+import { Navbar } from "widjet/Navbar";
 
 const App = () => {
   const { theme, onToggleTheme } = useTheme();
   return (
     <div className={classNames("app", {}, [theme])}>
       <button onClick={onToggleTheme}>theme</button>
-      <Link to="/about">About</Link>
-      <Link to="/">Main</Link>
+      <Navbar />
       <AppRouter />
     </div>
   );
