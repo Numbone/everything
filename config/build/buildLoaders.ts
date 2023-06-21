@@ -16,11 +16,23 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
             localIdentName: options.isDev
               ? "[path].[name]__[local]"
               : ["hash:base64:8"],
-          }
+          },
         },
       },
       // Compiles Sass to CSS
       "sass-loader",
+    ],
+  };
+  const svgLoader = {
+    test: /\.svg$/,
+    use: ["@svgr/webpack"],
+  };
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+    use: [
+      {
+        loader: "file-loader",
+      },
     ],
   };
   const typescriptLoader = {
@@ -28,5 +40,5 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     use: "ts-loader",
     exclude: /node_modules/,
   };
-  return [typescriptLoader, cssLoader];
+  return [typescriptLoader, cssLoader,svgLoader,fileLoader];
 }

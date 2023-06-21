@@ -12,12 +12,12 @@ import { AppRouter } from "./providers/Providers/router";
 import { Navbar } from "widjet/Navbar";
 
 const App = () => {
-  const { theme, onToggleTheme } = useTheme();
+  const { theme } = useTheme();
   return (
     <div className={classNames("app", {}, [theme])}>
-      <button onClick={onToggleTheme}>theme</button>
       <Navbar />
       <AppRouter />
+      
     </div>
   );
 };
