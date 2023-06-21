@@ -12,3 +12,4 @@ everything you to know that will be middle
 10.add FSD architecture 
 11. add absolute url 
 12. add Routing Provider
+13.add Navbar Theme divided by file
