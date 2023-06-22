@@ -15,3 +15,5 @@ everything you to know that will be middle
 13.add Navbar Theme divided by file
 14.add fileLoader and svgLoader
 15.first shared component Button
+16.add sidebar toggle button with collapsed function
+17.add i18next
