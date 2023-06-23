@@ -9,7 +9,7 @@ import { useTheme } from './providers/ThemeProvider';
 
 const App = () => {
     const { theme } = useTheme();
-
+    const { t } = useTranslation();
     return (
         <div className={classNames('app', {}, [theme])}>
             <Suspense fallback="">
