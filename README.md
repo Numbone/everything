@@ -18,3 +18,4 @@ everything you to know that will be middle
 16.add sidebar toggle button with collapsed function
 17.add i18next
 18. add react refresh webpack plugin, add switch Language component 
+19. add eslint config 

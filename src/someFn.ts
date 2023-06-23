@@ -1,3 +1,3 @@
-export const someFn=(arg:string):void=>{
-    console.log(`${arg}`)
-}
+export const someFn = (arg:string):void => {
+    console.log(`${arg}`);
+};
