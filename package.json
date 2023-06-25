@@ -12,10 +12,11 @@
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
     "style": "npx stylelint \"**/*.scss\"",
     "style:fix": "npx stylelint \"**/*.scss\" --fix",
-    "test": "jest"
+    "unit": "jest --config ./config/jest/jest.config.ts"
   },
   "dependencies": {
     "@svgr/webpack": "^8.0.1",
+    "@types/jest": "^29.5.2",
     "@types/node": "^20.2.5",
     "@types/react": "^18.2.9",
     "@types/react-dom": "^18.2.4",
@@ -35,6 +36,7 @@
     "react-i18next": "^13.0.1",
     "react-router-dom": "^6.12.1",
     "style-loader": "^3.3.3",
+    "ts-jest": "^29.1.0",
     "ts-loader": "^9.4.3",
     "ts-node": "^10.9.1",
     "typescript": "*",
@@ -43,10 +45,14 @@
     "webpack-dev-server": "^4.15.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "@babel/preset-react": "^7.22.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@typescript-eslint/eslint-plugin": "^5.60.0",
     "@typescript-eslint/parser": "^5.60.0",
+    "babel-jest": "^29.5.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-standard-with-typescript": "^35.0.0",
     "eslint-import-resolver-typescript": "^3.5.5",
