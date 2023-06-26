@@ -1,6 +1,7 @@
 {
-    "Home":"Главная",
-    "About":"О нас",
-    "Language":"ru",
-    "NotFoundPage": "Страница не найдено"
+  "Home": "Главная",
+  "About": "О нас",
+  "Language": "ru",
+  "NotFoundPage": "Страница не найдено",
+  "Reload page": "Обновит страницу"
 }

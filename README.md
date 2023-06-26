@@ -23,3 +23,4 @@ everything you to know that will be middle
 21. add jest testing first testing component
 22. add Not found page 
 23. add Page loader and component
+24. add ErrorBoundary 
