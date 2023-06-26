@@ -11,7 +11,6 @@ interface IThemeSwitcher {
 }
 const ThemeSwitcher: FC<IThemeSwitcher> = ({ className }) => {
     const { theme, onToggleTheme } = useTheme();
-    console.log(ButtonTheme.CLEAR);
     return (
         <Button
             theme={ButtonTheme.CLEAR}
