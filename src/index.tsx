@@ -13,6 +13,7 @@ root.render(
         <ErrorBoundary>
             <ThemeProvider>
                 <App />
+
             </ThemeProvider>
         </ErrorBoundary>
     </BrowserRouter>,

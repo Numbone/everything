@@ -11,6 +11,7 @@ const ErrorPage:FC<ErrorPageProps> = (props) => {
     const { className } = props;
     const { t } = useTranslation();
     const reloadPage = () => {
+        // eslint-disable-next-line no-restricted-globals
         location.reload();
     };
     return (

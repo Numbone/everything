@@ -1,8 +1,10 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import path from 'path';
 import webpack from 'webpack';
-import MiniCssExtractPligin from 'mini-css-extract-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+// import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types/config';
+
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 export function buildPlugins({ paths, isDev }:BuildOptions):webpack.WebpackPluginInstance[] {
     return [
@@ -10,7 +12,7 @@ export function buildPlugins({ paths, isDev }:BuildOptions):webpack.WebpackPlugi
             template: paths.html,
         }),
         new webpack.ProgressPlugin(),
-        new MiniCssExtractPligin({
+        new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash:8].css',
             chunkFilename: 'css/[name].[contenthash:8].css',
         }),
@@ -21,5 +23,8 @@ export function buildPlugins({ paths, isDev }:BuildOptions):webpack.WebpackPlugi
         ),
 
         new webpack.HotModuleReplacementPlugin(),
+        new BundleAnalyzerPlugin({
+            openAnalyzer: false,
+        }),
     ];
 }
