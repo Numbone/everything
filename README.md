@@ -25,4 +25,5 @@ everything you to know that will be middle
 23. add Page loader and component
 24. add ErrorBoundary 
 25. add Webpack Bundle Analyzer
-26. add storybook to project 
+26. add react-testing-library ,jest-config.ts,setupTests.ts
+27. add storybook to project 

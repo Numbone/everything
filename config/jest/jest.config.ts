@@ -74,7 +74,9 @@ export default {
     moduleDirectories: [
         'node_modules',
     ],
-
+    modulePaths: [
+        '<rootDir>src',
+    ],
     // An array of file extensions your modules use
     moduleFileExtensions: [
         'js',
@@ -101,7 +103,7 @@ export default {
 
     // A preset that is used as a base for Jest's configuration
     preset: 'ts-jest',
-
+    setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
     // Run tests from one or more projects
     // projects: undefined,
 
