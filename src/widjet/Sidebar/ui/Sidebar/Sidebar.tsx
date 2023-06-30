@@ -16,11 +16,12 @@ const Sidebar: FC<SidebarProps> = ({ className }) => {
     const { t } = useTranslation();
     return (
         <div
+            data-testid="sidebar"
             className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
                 className,
             ])}
         >
-            <button onClick={onToggle} type="button">{t('toggle')}</button>
+            <button data-testid="sidebar-toggle" onClick={onToggle} type="button">{t('toggle')}</button>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
                 <LangSwitcher className={cls.lang} />
