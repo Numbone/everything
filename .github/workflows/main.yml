@@ -27,7 +27,3 @@ jobs:
           run: yarn style
         - name: unit testing
           run: yarn unit
-        # - name: build storybook
-        #   run: yarn build-storybook
-        # - name: screenshot testing
-        #   run: yarn test:ui:ci
