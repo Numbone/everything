@@ -1,5 +1,5 @@
 import { fireEvent, screen } from '@testing-library/react';
-import { componentRouter } from 'shared/lib/test/com/componentRouter';
+import { componentRouter } from 'shared/lib/test/componentRouter/componentRouter';
 import Sidebar from './Sidebar';
 
 describe('Button', () => {
