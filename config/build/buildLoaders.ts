@@ -22,5 +22,10 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         use: 'ts-loader',
         exclude: /node_modules/,
     };
-    return [typescriptLoader, cssLoader, svgLoader, fileLoader];
+    return [
+        fileLoader,
+        svgLoader,
+        typescriptLoader,
+        cssLoader,
+    ];
 }
