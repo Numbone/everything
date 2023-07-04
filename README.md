@@ -28,3 +28,4 @@ everything you to know that will be middle
 26. add react-testing-library ,jest-config.ts,setupTests.ts , add sidebar testing component 
 27. add storybook to project 
 28. add loki testing library , first screenshot test 
+29. add main pipeline github actions
