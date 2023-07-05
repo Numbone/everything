@@ -29,3 +29,4 @@ everything you to know that will be middle
 27. add storybook to project 
 28. add loki testing library , first screenshot test 
 29. add main pipeline github actions
+30. add Modal, Portal , change Header component
