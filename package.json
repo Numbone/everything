@@ -23,6 +23,7 @@
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "@svgr/webpack": "^8.0.1",
     "@types/jest": "^29.5.2",
     "@types/node": "^20.2.5",
@@ -42,6 +43,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^13.0.1",
+    "react-redux": "^8.1.1",
     "react-router-dom": "^6.12.1",
     "storybook": "^7.0.24",
     "style-loader": "^3.3.3",
