@@ -1,15 +1,15 @@
 import { fireEvent, screen } from '@testing-library/react';
-import { componentRouter } from 'shared/lib/test/componentRouter/componentRouter';
+import { componentRender } from 'shared/lib/test/componentRender/componentRender';
 import Sidebar from './Sidebar';
 
 describe('Button', () => {
     test('Test render', () => {
-        componentRouter(<Sidebar />);
+        componentRender(<Sidebar />);
         expect(screen.getByText('<')).toBeInTheDocument();
     });
 
     test('Sidebar collapse', () => {
-        componentRouter(<Sidebar />);
+        componentRender(<Sidebar />);
         const toggleBtn = screen.getByTestId('sidebar-toggle');
         expect(screen.getByText('<')).toBeInTheDocument();
         fireEvent.click(toggleBtn);

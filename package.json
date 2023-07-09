@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
+    "@storybook/testing-library": "^0.2.0",
     "@svgr/webpack": "^8.0.1",
     "@types/jest": "^29.5.2",
     "@types/node": "^20.2.5",

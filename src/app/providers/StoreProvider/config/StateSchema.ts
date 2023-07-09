@@ -1,7 +1,5 @@
-export interface Counter{
-    value:number
-}
+import { CounterSchema } from 'entities/Counter';
 
 export interface StateSchema{
-    // counter:Counter
+    counter:CounterSchema
 }

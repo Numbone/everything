@@ -30,3 +30,4 @@ everything you to know that will be middle
 28. add loki testing library , first screenshot test 
 29. add main pipeline github actions
 30. add Modal, Portal , change Header component
+31. add redux toolkit add , first slice Counter, testing component

@@ -3082,6 +3082,15 @@
     nanoid "^3.3.1"
     read-pkg-up "^7.0.1"
 
+"@storybook/testing-library@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@storybook/testing-library/-/testing-library-0.2.0.tgz#09202b90ea5bd67b503dbb1a0b1f3ab3eb005d04"
+  integrity sha512-Ff6jNnrsosmDshgCf0Eb5Cz7IA34p/1Ps5N3Kp3598kfXpBSccSkQQvVFUXC3kIHw/isIXWPqntZuKqnWUz7Gw==
+  dependencies:
+    "@testing-library/dom" "^9.0.0"
+    "@testing-library/user-event" "^14.0.0"
+    ts-dedent "^2.2.0"
+
 "@storybook/theming@7.0.24":
   version "7.0.24"
   resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-7.0.24.tgz#5e74f20bda1cdb9ba2a4a0c7a96ca014cdee5532"
@@ -3255,6 +3264,11 @@
     "@babel/runtime" "^7.12.5"
     "@testing-library/dom" "^9.0.0"
     "@types/react-dom" "^18.0.0"
+
+"@testing-library/user-event@^14.0.0":
+  version "14.4.3"
+  resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-14.4.3.tgz#af975e367743fa91989cd666666aec31a8f50591"
+  integrity sha512-kCUc5MEwaEMakkO5x7aoD+DLi02ehmEM2QCGWvNqAS1dV/fAvORWEjnjsEIvml59M7Y5kCkWN6fCCyPOe8OL6Q==
 
 "@tootallnate/once@2":
   version "2.0.0"
