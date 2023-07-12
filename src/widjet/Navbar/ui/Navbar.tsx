@@ -3,6 +3,7 @@ import { classNames } from 'shared/lib/classNames/className';
 import { useTranslation } from 'react-i18next';
 import Modal from 'shared/ui/Modal/ui/Modal';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
+import { LoginModal } from 'features';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -20,7 +21,7 @@ const Navbar = ({ className }: NavbarProps) => {
             >
                 {t('Login')}
             </Button>
-            <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+            <LoginModal isOpen={isOpen} setIsOpen={() => setIsOpen(false)} />
         </div>
     );
 };

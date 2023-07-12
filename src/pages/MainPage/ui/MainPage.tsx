@@ -1,8 +1,11 @@
 import { Counter } from 'entities/Counter';
-import React from 'react';
+import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const MainPage = () => {
+interface MainPageProps{
+    className?:string;
+}
+const MainPage:FC<MainPageProps> = ({ className }) => {
     const { t } = useTranslation();
     return (
         <div>

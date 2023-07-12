@@ -3,12 +3,16 @@
 @import "./themes/normal";
 @import "./variables/global";
 
-.app {
-    font-size: var(--font-m);
-    background-color: var(--bg-color);
+.app .app_modal{
     color: var(--primary-color);
+    font-size: var(--font-m);
+}
+
+.app {
+    color: var(--primary-color);
+    font-size: var(--font-m); 
+    background-color: var(--bg-color);
     min-height: 100vh;
-    
 }
 
 .content-page {
