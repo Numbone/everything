@@ -14,7 +14,12 @@ const LoginModal:FC<LoginModalProps> = (props:LoginModalProps) => {
     const { className, isOpen, setIsOpen } = props;
     const { t } = useTranslation();
     return (
-        <Modal onClose={setIsOpen} isOpen={isOpen} className={classNames(cls.LoginModal, {}, [className])}>
+        <Modal
+            onClose={setIsOpen}
+            isOpen={isOpen}
+            className={classNames(cls.LoginModal, {}, [className])}
+            lazy
+        >
             <LoginForm />
         </Modal>
     );

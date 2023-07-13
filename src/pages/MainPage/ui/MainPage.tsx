@@ -10,10 +10,6 @@ const MainPage:FC<MainPageProps> = ({ className }) => {
     return (
         <div>
             {t('Home')}
-            <div>
-                <Counter />
-            </div>
-
         </div>
     );
 };

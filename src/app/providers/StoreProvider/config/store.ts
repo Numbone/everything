@@ -1,5 +1,5 @@
 import { ReducersMapObject, combineReducers, configureStore } from '@reduxjs/toolkit';
-import { userReducer } from 'entities/User';
+import { userReducer } from '../../../../entities/User';
 import { counterReducer } from '../../../../entities/Counter/model/slice/counterSlice';
 import { StateSchema } from './StateSchema';
 

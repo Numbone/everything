@@ -1,9 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux';
 import Button from 'shared/ui/Button/Button';
+import { FC } from 'react';
 import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 import { counterActions } from '../model/slice/counterSlice';
 
-export const Counter = () => {
+interface CounterProps {
+    className?: string;
+}
+export const Counter:FC<CounterProps> = ({ className }) => {
     const dispatch = useDispatch();
     const counterValue = useSelector(getCounterValue);
     const increment = () => {
@@ -13,7 +17,7 @@ export const Counter = () => {
         dispatch(counterActions.decrement());
     };
     return (
-        <div>
+        <>
             <h1 data-testid="value-title">{counterValue}</h1>
             <Button
                 onClick={increment}
@@ -27,6 +31,6 @@ export const Counter = () => {
             >
                 -
             </Button>
-        </div>
+        </>
     );
 };
