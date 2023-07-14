@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/className';
 import { useTranslation } from 'react-i18next';
 import Modal from 'shared/ui/Modal/ui/Modal';
