@@ -76,10 +76,11 @@ export default {
 
     // An array of directory names to be searched recursively up from the requiring module's location
     moduleDirectories: [
-        'node_modules', 'src',
+        'node_modules',
     ],
     modulePaths: [
-        'node_modules', '<rootDir>/src',
+        'node_modules',
+        '<rootDir>src/',
     ],
     // An array of file extensions your modules use
     moduleFileExtensions: [
@@ -109,7 +110,7 @@ export default {
     // notifyMode: "failure-change",
 
     // A preset that is used as a base for Jest's configuration
-    preset: 'ts-jest',
+    // preset: 'ts-jest',
     setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
     // Run tests from one or more projects
     // projects: undefined,
@@ -181,7 +182,10 @@ export default {
     // testRunner: "jest-circus/runner",
 
     // A map from regular expressions to paths to transformers
-    transform: { '^.+\\.jsx?$': 'babel-jest' },
+    transform: {
+        '^.+\\.tsx?$': 'ts-jest',
+        '^.+\\.jsx?$': 'babel-jest',
+    },
 
     // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
     transformIgnorePatterns: [

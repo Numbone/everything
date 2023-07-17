@@ -71,12 +71,10 @@ const Modal:FC<ModalProps> = ({
     return (
         <Portal>
             <div className={classNames(cls.Modal, mods, [className, theme, 'app_modal'])}>
-                <div className={cls.overlay} onClick={closeHandler} aria-hidden>
+                <div className={cls.overlay} onClick={closeHandler}>
                     <div
                         className={cls.content}
                         onClick={onContentClick}
-                        // FIXME later
-                        aria-hidden
                     >
                         {children}
                     </div>
