@@ -77,10 +77,11 @@ export default {
     // An array of directory names to be searched recursively up from the requiring module's location
     moduleDirectories: [
         'node_modules',
+        '<rootDir>src/',
     ],
     modulePaths: [
         'node_modules',
-        '<rootDir>src/',
+        // '<rootDir>src/',
     ],
     // An array of file extensions your modules use
     moduleFileExtensions: [

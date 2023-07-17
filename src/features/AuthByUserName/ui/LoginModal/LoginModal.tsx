@@ -3,7 +3,7 @@ import { classNames } from 'shared/lib/classNames/className';
 import { Modal } from 'shared/ui/Modal';
 import { useTranslation } from 'react-i18next';
 import cls from './LoginModal.module.scss';
-import LoginForm from '../LoginForm/LoginForm';
+import { LoginFormAsync } from '../LoginForm/LoginFrom.async';
 
 interface LoginModalProps{
     className?: string,
@@ -20,7 +20,7 @@ const LoginModal:FC<LoginModalProps> = (props:LoginModalProps) => {
             className={classNames('', {}, [className])}
             lazy
         >
-            <LoginForm />
+            <LoginFormAsync />
         </Modal>
     );
 };

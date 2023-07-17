@@ -48,7 +48,10 @@ const Navbar = ({ className }: NavbarProps) => {
             >
                 {t('Login')}
             </Button>
-            <LoginModal isOpen={isOpen} setIsOpen={onCloseModal} />
+            {
+                isOpen && <LoginModal isOpen={isOpen} setIsOpen={onCloseModal} />
+            }
+
         </div>
     );
 };
