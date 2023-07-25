@@ -83,7 +83,7 @@ const LoginForm:FC<LoginFormProps> = memo((props:LoginFormProps) => {
                     className={cls.loginBtn}
                     onClick={onLoginClick}
                 >
-                    123
+                    {t('Login')}
                 </Button>
             </div>
         </DynamicModuleLoader>

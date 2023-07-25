@@ -35,3 +35,4 @@ everything you to know that will be middle
 33. add User entities first custom Component Input, 
 34. add LoginUserName component first async request
 35. add asyncReducer component 
+36. test feature AuthByUsername
