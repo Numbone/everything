@@ -20,7 +20,7 @@ const LoginModal:FC<LoginModalProps> = (props:LoginModalProps) => {
             className={classNames('', {}, [className])}
             lazy
         >
-            <LoginFormAsync />
+            <LoginFormAsync onSuccess={setIsOpen} />
         </Modal>
     );
 };
