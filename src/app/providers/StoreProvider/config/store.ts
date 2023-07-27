@@ -3,6 +3,7 @@ import {
 } from '@reduxjs/toolkit';
 import { $api } from 'shared/api/api';
 import { NavigateOptions, To } from 'react-router-dom';
+import { CombinedState, Reducer } from 'redux';
 import { userReducer } from '../../../../entities/User';
 import { counterReducer } from '../../../../entities/Counter/model/slice/counterSlice';
 import { StateSchema } from './StateSchema';
@@ -21,7 +22,7 @@ export function createReduxStore(
     const reducerManager = createReducerManager(rootReducer);
 
     const store = configureStore({
-        reducer: reducerManager.reduce,
+        reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
         devTools: __IS_DEV__,
         preloadedState: initialState,
         middleware: (getDefaultMiddleware) => (getDefaultMiddleware)({

@@ -6,7 +6,7 @@ import cls from './LoginModal.module.scss';
 import { LoginFormAsync } from '../LoginForm/LoginFrom.async';
 
 interface LoginModalProps{
-    className?: string,
+    className?: string|'',
     isOpen:boolean,
     setIsOpen:()=>void
 }

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/className';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { ProfileCard, fetchProfileData, profileReducer } from 'entities/Profile';
+import { ProfileCard, fetchProfileData, profileReducer } from '../../../entities/Profile';
 import cls from './ProfilePage.module.scss';
 
 const reducers:ReducersList = {

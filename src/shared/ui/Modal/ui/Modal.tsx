@@ -7,7 +7,7 @@ import { Portal } from 'shared/ui/Portal/Portal';
 import cls from './Modal.module.scss';
 
 interface ModalProps{
-    className?:string;
+    className:string|'';
     children?:React.ReactNode;
     isOpen:boolean;
     onClose:()=>void;

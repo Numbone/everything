@@ -39,3 +39,4 @@ everything you to know that will be middle
 37. add profile entities 
 38. add Instance url compose with Redux
 39. add Fetching get profile data
+40. add ts.config strict mode , refractor 

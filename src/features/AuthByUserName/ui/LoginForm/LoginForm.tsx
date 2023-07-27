@@ -19,7 +19,7 @@ import { loginByUsername } from '../../model/service/loginByUserName/loginByUser
 
 export interface LoginFormProps {
     className?:string;
-    onSuccess?:()=>void;
+    onSuccess:()=>void;
 }
 
 const initialReducers: ReducersList = {

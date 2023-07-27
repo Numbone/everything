@@ -1,13 +1,13 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { getProfileData } from 'entities/Profile/model/selectors/getProfileData/getProfileData';
-import { getProfileIsLoading } from 'entities/Profile/model/selectors/getProfileIsLoading/getProfileIsLoading';
-import { getProfileError } from 'entities/Profile/model/selectors/getProfileError/getProfileError';
 import { classNames } from 'shared/lib/classNames/className';
 import { Text } from 'shared/ui/Text/Text';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
+import { getProfileError } from '../../../../entities/Profile/model/selectors/getProfileError/getProfileError';
+import { getProfileIsLoading } from '../../../../entities/Profile/model/selectors/getProfileIsLoading/getProfileIsLoading';
+import { getProfileData } from '../../../../entities/Profile/model/selectors/getProfileData/getProfileData';
 import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps{
