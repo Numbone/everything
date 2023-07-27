@@ -2,5 +2,8 @@
   "profile": "Profile",
   "edit": "Edit",
   "profile.name": "Your name",
-  "profile.surname": "Your surname"
+  "profile.surname": "Your surname",
+  "profile.loadingError": "An error occurred while loading",
+  "profile.refresh": "Try to refresh"
+  
 }
