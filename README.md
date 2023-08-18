@@ -42,3 +42,5 @@ everything you to know that will be middle
 40. add ts.config strict mode , refractor 
 41. add profile information ,profile slice update,add private route for auth 
 42. add validate profile module
+43. add Profile module test
+44. add third theme for test
