@@ -12,7 +12,7 @@ import SidebarItem from '../SidebarItem/SidebarItem';
 interface SidebarProps {
   className?: string;
 }
-const Sidebar: FC<SidebarProps> = ({ className }) => {
+export const Sidebar = memo(({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(false);
     const onToggle = () => {
         setCollapsed((prev) => !prev);
@@ -50,6 +50,4 @@ const Sidebar: FC<SidebarProps> = ({ className }) => {
             </div>
         </div>
     );
-};
-
-export default memo(Sidebar);
+});

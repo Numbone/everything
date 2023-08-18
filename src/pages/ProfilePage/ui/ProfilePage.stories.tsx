@@ -3,6 +3,8 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
 import ProfilePage from './ProfilePage';
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -17,12 +19,34 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...args} />;
 
-export const Light = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Light.args = {
-};
-Light.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({})];
+export const Normal = Template.bind({});
+Normal.args = {};
+Normal.decorators = [StoreDecorator({
+    profile: {
+        form: {
+            username: 'admin',
+            age: 22,
+            country: Country.Ukraine,
+            lastname: 'ulbi tv',
+            first: 'asd',
+            city: 'asf',
+            currency: Currency.USD,
+        },
+    },
+})];
+
 export const Dark = Template.bind({});
-Dark.args = {
-};
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
+Dark.args = {};
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
+    profile: {
+        form: {
+            username: 'admin',
+            age: 22,
+            country: Country.Ukraine,
+            lastname: 'ulbi tv',
+            first: 'asd',
+            city: 'asf',
+            currency: Currency.USD,
+        },
+    },
+})];

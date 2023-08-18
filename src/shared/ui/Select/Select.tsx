@@ -45,7 +45,7 @@ export const Select = memo((props: SelectProps) => {
     const mods: Mods = {};
 
     return (
-        <div className={classNames(cls.Wrapper, mods, [className])}>
+        <div className={classNames(cls.wrapper, mods, [className])}>
             {label && (
                 <span className={cls.label}>
                     {`${label}>`}

@@ -1,27 +1,37 @@
 import { FC, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/className';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
-import { getProfileForm } from 'entities/Profile/model/selectors/getProfileForm/getProfileForm';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
-import { ValidateProfileError } from 'entities/Profile/model/types/profile';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Currency } from '../../../entities/Currency';
+import { Country } from '../../../entities/Country';
 import {
-    ProfileCard, fetchProfileData, getProfileData, getProfileError, getProfileIsLoading, getProfileReadonly, getProfileValidateErrors, profileActions, profileReducer,
+    ProfileCard,
+    fetchProfileData,
+    getProfileError,
+    getProfileIsLoading,
+    getProfileReadonly,
+    getProfileValidateErrors,
+    profileActions,
+    profileReducer,
+    getProfileForm,
+    ValidateProfileError,
 } from '../../../entities/Profile';
 import cls from './ProfilePage.module.scss';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
-const reducers:ReducersList = {
+const reducers: ReducersList = {
     profile: profileReducer,
 };
-interface ProfilePageProps{
-    className?:string;
+interface ProfilePageProps {
+  className?: string;
 }
-const ProfilePage:FC<ProfilePageProps> = ({ className }) => {
+const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const isLoading = useSelector(getProfileIsLoading);
@@ -37,52 +47,79 @@ const ProfilePage:FC<ProfilePageProps> = ({ className }) => {
         [ValidateProfileError.INCORRECT_AGE]: t('Некорректный возраст'),
     };
     useEffect(() => {
-        dispatch(fetchProfileData());
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchProfileData());
+        }
     }, [dispatch]);
 
-    const onChangeFirstname = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ first: value || '' }));
-    }, [dispatch]);
+    const onChangeFirstname = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ first: value || '' }));
+        },
+        [dispatch],
+    );
 
-    const onChangeLastname = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ lastname: value || '' }));
-    }, [dispatch]);
+    const onChangeLastname = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ lastname: value || '' }));
+        },
+        [dispatch],
+    );
 
-    const onChangeCity = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ city: value || '' }));
-    }, [dispatch]);
+    const onChangeCity = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ city: value || '' }));
+        },
+        [dispatch],
+    );
 
-    const onChangeAge = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ age: Number(value || 0) }));
-    }, [dispatch]);
+    const onChangeAge = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ age: Number(value || 0) }));
+        },
+        [dispatch],
+    );
 
-    const onChangeUsername = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ username: value || '' }));
-    }, [dispatch]);
+    const onChangeUsername = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ username: value || '' }));
+        },
+        [dispatch],
+    );
 
-    const onChangeAvatar = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ avatar: value || '' }));
-    }, [dispatch]);
+    const onChangeAvatar = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ avatar: value || '' }));
+        },
+        [dispatch],
+    );
 
-    const onChangeCurrency = useCallback((currency: Currency) => {
-        dispatch(profileActions.updateProfile({ currency }));
-    }, [dispatch]);
+    const onChangeCurrency = useCallback(
+        (currency: Currency) => {
+            dispatch(profileActions.updateProfile({ currency }));
+        },
+        [dispatch],
+    );
 
-    const onChangeCountry = useCallback((country: Country) => {
-        dispatch(profileActions.updateProfile({ country }));
-    }, [dispatch]);
+    const onChangeCountry = useCallback(
+        (country: Country) => {
+            dispatch(profileActions.updateProfile({ country }));
+        },
+        [dispatch],
+    );
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div className={classNames(cls.ProfilePage, {}, [])}>
                 <ProfilePageHeader />
-                {validateErrors?.length && validateErrors.map((err) => (
-                    <Text
-                        key={err}
-                        theme={TextTheme.ERROR}
-                        text={validateErrorTranslates[err]}
-                    />
-                ))}
+                {validateErrors?.length
+          && validateErrors.map((err) => (
+              <Text
+                  key={err}
+                  theme={TextTheme.ERROR}
+                  text={validateErrorTranslates[err]}
+              />
+          ))}
                 <ProfileCard
                     data={formData}
                     isLoading={isLoading}
@@ -99,7 +136,6 @@ const ProfilePage:FC<ProfilePageProps> = ({ className }) => {
                 />
             </div>
         </DynamicModuleLoader>
-
     );
 };
 
