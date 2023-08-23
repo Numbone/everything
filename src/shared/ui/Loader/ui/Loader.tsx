@@ -5,7 +5,7 @@ import './Loader.scss';
 interface LoaderProps{
     className?:string;
 }
-const Loader:FC<LoaderProps> = (props) => {
+export const Loader:FC<LoaderProps> = (props) => {
     const { className } = props;
     return (
         <div className={classNames('lds-ellipsis', {}, [className])}>
@@ -16,5 +16,3 @@ const Loader:FC<LoaderProps> = (props) => {
         </div>
     );
 };
-
-export default Loader;

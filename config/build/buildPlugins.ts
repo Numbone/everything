@@ -19,7 +19,7 @@ export function buildPlugins({ paths, isDev, project }:BuildOptions):webpack.Web
         }),
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
-            __PRPJECT__: JSON.stringify(project),
+            __PROJECT__: JSON.stringify(project),
         }),
     ];
 

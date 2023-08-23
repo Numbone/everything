@@ -11,7 +11,7 @@ interface SidebarItemProps{
     item: SidebarItemType;
     collapsed: boolean;
 }
-const SidebarItem = ({ item, collapsed }: SidebarItemProps) => {
+export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
     const { t } = useTranslation();
     const isAuth = useSelector(getUserAuthData);
 
@@ -30,6 +30,4 @@ const SidebarItem = ({ item, collapsed }: SidebarItemProps) => {
             </span>
         </AppLink>
     );
-};
-
-export default memo(SidebarItem);
+});

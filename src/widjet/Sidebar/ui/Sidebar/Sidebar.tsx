@@ -7,16 +7,18 @@ import LangSwitcher from 'shared/ui/LangSwitcher/ui/LangSwitcher';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 import { SidebarItemsList } from 'widjet/Sidebar/model/type/item';
 import cls from './Sidebar.module.scss';
-import SidebarItem from '../SidebarItem/SidebarItem';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 interface SidebarProps {
   className?: string;
 }
 export const Sidebar = memo(({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(false);
+
     const onToggle = () => {
         setCollapsed((prev) => !prev);
     };
+
     const itemsList = useMemo(() => SidebarItemsList.map((item) => (
         <SidebarItem
             item={item}
@@ -24,6 +26,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
             key={item.path}
         />
     )), [collapsed]);
+
     return (
         <div
             data-testid="sidebar"
