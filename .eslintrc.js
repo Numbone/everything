@@ -43,6 +43,7 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'warn',
         'no-param-reassign': 'off',
         'no-undef': 'off',
+        'linebreak-style': ['off', 'unix'],
     },
     globals: {
         __IS_DEV__: true,
