@@ -44,6 +44,7 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'linebreak-style': ['off', 'unix'],
+        'rule-empty-line-before': 'always',
     },
     globals: {
         __IS_DEV__: true,

@@ -19,7 +19,7 @@ everything you to know that will be middle
 17. add i18next
 18. add react refresh webpack plugin, add switch Language component 
 19. add eslint config 
-20. add stylint config
+20. add stylelint config
 21. add jest testing first testing component
 22. add Not found page 
 23. add Page loader and component
