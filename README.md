@@ -49,3 +49,4 @@ everything you to know that will be middle
 47. add requireAuth component wrap route config
 48. add Articles pages ,sidebar icons
 49. add article entity 
+50. Article page. Block structure. Component Code. Copy tags

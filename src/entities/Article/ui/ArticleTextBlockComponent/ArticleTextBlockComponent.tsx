@@ -1,21 +1,27 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/className';
-import styles from './ArticleTextBlockComponent.module.scss';
+import { Text } from 'shared/ui';
+import cls from './ArticleTextBlockComponent.module.scss';
 import { ArticleTextBlock } from '../../module/types/article';
 
 interface Props {
     className: string
     block: ArticleTextBlock
 }
-const ArticleTextBlockComponent = (props:Props) => {
+const ArticleTextBlockComponent = memo((props:Props) => {
     const { className, block } = props;
     const { t } = useTranslation();
     return (
-        <div className={classNames(styles.content, {}, [className])}>
-            123
+        <div className={classNames(cls.ArticleTextBlockComponent, {}, [className])}>
+            {block.title && (
+                <Text title={block.title} className={cls.title} />
+            )}
+            {block.paragraphs.map((paragraph, index) => (
+                <Text key={paragraph} text={paragraph} className={cls.paragraph} />
+            ))}
         </div>
     );
-};
+});
 
 export { ArticleTextBlockComponent };
