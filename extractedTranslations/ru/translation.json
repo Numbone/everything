@@ -9,12 +9,16 @@
   "NotFoundPage": "NotFoundPage",
   "Reload page": "Reload page",
   "about": "about",
+  "ariclecommentary": "ariclecommentary",
   "article": {
     "": "",
     "Article not found": "Article not found",
+    "commentary": "commentary",
     "errors": "errors",
     "errorsArticles": "errorsArticles"
   },
+  "commentary": "commentary",
+  "commentta": "commentta",
   "profile": {
     "loadingError": "loadingError",
     "name": "name",

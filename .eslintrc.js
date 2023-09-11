@@ -32,7 +32,7 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
-        'i18next/no-literal-string': ['error', {
+        'i18next/no-literal-string': ['warn', {
             markupOnly: true,
             ignoreAttribute: ['data-testid', 'to'],
         }],
@@ -44,7 +44,6 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'linebreak-style': ['off', 'unix'],
-        'rule-empty-line-before': 'always',
     },
     globals: {
         __IS_DEV__: true,

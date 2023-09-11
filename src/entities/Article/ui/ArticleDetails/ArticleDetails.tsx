@@ -113,7 +113,7 @@ const ArticleDetails = memo((props:Props) => {
             </>
         );
     }
-
+    console.log(error);
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             {content}
