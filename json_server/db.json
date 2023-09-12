@@ -120,7 +120,8 @@
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
-  "profile": {
+  "profile":[ {
+    "id":"1",
     "first": "nurlybek",
     "lastname": "Salkhayev123S",
     "age": 25,
@@ -129,5 +130,17 @@
     "city": "Astanaqwe",
     "username": "admin",
     "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+  },
+  {
+    "id":"2",
+    "first": "123",
+    "lastname": "123",
+    "age": 25,
+    "currency": "KAZ",
+    "country": "Kazahstan",
+    "city": "Astanaqwe",
+    "username": "admin",
+    "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
   }
+]
 }

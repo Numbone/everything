@@ -9,11 +9,11 @@ interface LoginByUsernameProps {
     username: string;
     password: string;
 }
-export const fetchProfileData = createAsyncThunk<Profile, void, { rejectValue: string, extra:ThunkExtraArg}>(
+export const fetchProfileData = createAsyncThunk<Profile, string, { rejectValue: string, extra:ThunkExtraArg}>(
     'profile/fetchProfileData',
-    async (authData, thunkAPI) => {
+    async (userId, thunkAPI) => {
         try {
-            const response = await thunkAPI.extra.api.get<Profile>('/profile');
+            const response = await thunkAPI.extra.api.get<Profile>(`/profile/${userId}`);
             if (!response.data) {
                 throw new Error();
             }

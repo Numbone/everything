@@ -8,6 +8,7 @@ import {
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { useParams } from 'react-router-dom';
 import { Currency } from '../../../entities/Currency';
 import { Country } from '../../../entities/Country';
 import {
@@ -39,6 +40,8 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
     const formData = useSelector(getProfileForm);
     const readonly = useSelector(getProfileReadonly);
     const validateErrors = useSelector(getProfileValidateErrors);
+    const { id } = useParams<{id:string}>();
+    console.log(id);
     const validateErrorTranslates = {
         [ValidateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
         [ValidateProfileError.INCORRECT_COUNTRY]: t('Некорректный регион'),
@@ -48,9 +51,11 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
     };
     useEffect(() => {
         if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData());
+            if (id) {
+                dispatch(fetchProfileData(id));
+            }
         }
-    }, [dispatch]);
+    }, [dispatch, id]);
 
     const onChangeFirstname = useCallback(
         (value?: string) => {

@@ -50,4 +50,5 @@ everything you to know that will be middle
 48. add Articles pages ,sidebar icons
 49. add article entity 
 50. Article page. Block structure. Component Code. Copy tags
-51. 51 Commentary module. Normalize redux toolkit data. EntityAdapter
+51. Commentary module. Normalize redux toolkit data. EntityAdapter
+52. add comment entity 
