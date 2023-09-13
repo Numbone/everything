@@ -14,6 +14,14 @@ interface Props{
 const CommentList = (props:Props) => {
     const { className, comments, isLoading } = props;
     const { t } = useTranslation();
+    if (isLoading) {
+        <div className={classNames(styles.content, {}, [className])}>
+            <CommentCard isLoading />
+            <CommentCard isLoading />
+            <CommentCard isLoading />
+        </div>;
+    }
+
     return (
         <div className={classNames(styles.content, {}, [className])}>
             {comments.length

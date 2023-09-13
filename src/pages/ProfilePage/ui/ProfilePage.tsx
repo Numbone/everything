@@ -22,6 +22,7 @@ import {
     profileReducer,
     getProfileForm,
     ValidateProfileError,
+    getProfileData,
 } from '../../../entities/Profile';
 import cls from './ProfilePage.module.scss';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
@@ -41,7 +42,7 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
     const readonly = useSelector(getProfileReadonly);
     const validateErrors = useSelector(getProfileValidateErrors);
     const { id } = useParams<{id:string}>();
-    console.log(id);
+
     const validateErrorTranslates = {
         [ValidateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
         [ValidateProfileError.INCORRECT_COUNTRY]: t('Некорректный регион'),

@@ -10,14 +10,14 @@ import styles from './CommentCard.module.scss';
 
 interface Props{
   className?:string;
-  comment:Comment;
+  comment?:Comment;
   isLoading?:boolean;
 }
 const CommentCard = (props:Props) => {
     const { className, comment, isLoading } = props;
     if (isLoading) {
         return (
-            <div className={classNames(styles.CommentCard, {}, [])}>
+            <div className={classNames(styles.CommentCard, {}, [className, styles.isLoading])}>
                 <div className={styles.header}>
                     <Skeleton width={30} height={30} border="50%" />
                     <Skeleton className={styles.username} height={16} width={100} />
@@ -25,6 +25,9 @@ const CommentCard = (props:Props) => {
                 <Skeleton className={styles.text} width="100%" height={50} />
             </div>
         );
+    }
+    if (!comment) {
+        return null;
     }
     return (
         <div className={classNames(styles.CommentCard, {}, [])}>
