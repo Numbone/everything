@@ -51,4 +51,4 @@ everything you to know that will be middle
 49. add article entity 
 50. Article page. Block structure. Component Code. Copy tags
 51. Commentary module. Normalize redux toolkit data. EntityAdapter
-52. add comment entity 
+52. add comment entity ,update user ,update profile, update sidebar,selector
