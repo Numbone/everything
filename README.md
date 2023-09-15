@@ -53,4 +53,4 @@ everything you to know that will be middle
 51. Commentary module. Normalize redux toolkit data. EntityAdapter
 52. add comment entity ,update user ,update profile, 
 53. update sidebar,selector
-54. list of articles ,change viewpoint
+54. list of articles ,change viewpoint 8:05
