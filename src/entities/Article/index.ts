@@ -1,5 +1,5 @@
-import { ArticleDetailsSchema } from './module/types/articleDetailsSchema';
-import { Article, ArticleView } from './module/types/article';
+import { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
+import { Article, ArticleView } from './model/types/article';
 import { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
 import { ArticleList } from './ui/ArticleList/ArticleList';
 

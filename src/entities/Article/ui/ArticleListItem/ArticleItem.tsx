@@ -7,8 +7,13 @@ import { Icon } from 'shared/ui/Icon/Icon';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 import styles from './ArticleListItem.module.scss';
-import { Article, ArticleView } from '../../model/types/article';
+import {
+    Article, ArticleBlockType, ArticleTextBlock, ArticleView,
+} from '../../model/types/article';
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 interface Props {
     className?:string;
@@ -33,9 +38,33 @@ const ArticleListItem = (props:Props) => {
     );
 
     if (view === ArticleView.BIG) {
-        <div className={classNames(styles.ArticleListItem, {}, [className, styles[view]])}>
-            ArticleItem
-        </div>;
+        const textBlock = article.blocks.find(
+            (block) => block.type === ArticleBlockType.TEXT,
+        ) as ArticleTextBlock;
+
+        return (
+            <div className={classNames(styles.ArticleListItem, {}, [className, styles[view]])}>
+                <Card className={styles.card}>
+                    <div className={styles.header}>
+                        <Avatar size={30} src={article.user.avatar} />
+                        <Text text={article.user.username} className={styles.username} />
+                        <Text text={article.createdAt} className={styles.date} />
+                    </div>
+                    <Text title={article.title} className={styles.title} />
+                    {types}
+                    <img src={article.img} className={styles.img} alt={article.title} />
+                    {textBlock && (
+                        <ArticleTextBlockComponent block={textBlock} className={styles.textBlock} />
+                    )}
+                    <div className={styles.footer}>
+                        <Button onClick={onOpenArticle} theme={ButtonTheme.OUTLINE}>
+                            {t('Читать далее...')}
+                        </Button>
+                        {views}
+                    </div>
+                </Card>
+            </div>
+        );
     }
     return (
         <div className={classNames(styles.ArticleListItem, {}, [className, styles[view]])}>

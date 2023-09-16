@@ -10,36 +10,27 @@ export default ({ config }: { config: webpack.Configuration }) => {
       src: path.resolve(__dirname, '..', '..', 'src'),
     };
   
-    if (config.resolve && config.resolve.modules) {
-      config.resolve.modules.push(paths.src);
-    }
+    config!.resolve!.modules!.push(paths.src);
+    config!.resolve!.extensions!.push('.ts', '.tsx');
   
-    if (config.resolve && config.resolve.extensions) {
-      config.resolve.extensions.push('.ts', '.tsx');
-    }
-  
-    if (config.module && config.module.rules) {
-      config.module.rules.push(buildCssLoader(true));
-    }
-    if (config.module && config.module.rules) {
-      // @ts-ignore
-      config.module.rules=config.module?.rules?.map((rule: RuleSetRule )=>{
-        if(/svg/.test(rule.test as string)){
-          return {...rule,exclude: /\.svg$/i};
-        }
-        return rule
-      })
-    }
-    if (config.module && config.module.rules) {
-      config.module.rules.push({
-        test: /\.svg$/,
-        use: ['@svgr/webpack'],
+   
+
+    config!.module!.rules = config.module!.rules!.map((rule: any) => {
+      if (/svg/.test(rule.test as string)) {
+          return { ...rule, exclude: /\.svg$/i };
+      }
+
+      return rule;
     });
-    }
-    config?.plugins?.push(new DefinePlugin({
-      __IS_DEV__: true,
-      __PROJECT__:JSON.stringify('storybook')
-    }));
+    config!.module!.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+  });
+    config!.module!.rules.push(buildCssLoader(true));
+    config!.plugins!.push(new DefinePlugin({
+      __IS_DEV__: JSON.stringify(true),
+      __PROJECT__: JSON.stringify('storybook'),
+  }));
   
     return config;
   };
