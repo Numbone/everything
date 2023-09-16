@@ -4,7 +4,7 @@ import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { SidebarItemType } from 'widjet/Sidebar/model/type/item';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { getUserAuthData } from '../../../../entities/User';
+import { getUserAuthData } from 'entities/User';
 import cls from './SidebarItem.module.scss';
 
 interface SidebarItemProps{

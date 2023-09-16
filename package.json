@@ -11,7 +11,7 @@
     "build:prod": "webpack  --env mode=production",
     "build:dev": "webpack --env mode=development",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
-    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
+    "lint:fix": "eslint src/**/*.{js,jsx,ts,tsx,json} --fix",
     "style": "npx stylelint \"**/*.scss\"",
     "style:fix": "npx stylelint \"**/*.scss\" --fix",
     "unit": "jest --config ./config/jest/jest.config.ts",

@@ -36,7 +36,7 @@ const ArticleList = memo((props:Props) => {
         );
     }
     return (
-        <div className={classNames(styles.content, {}, [])}>
+        <div className={classNames(styles.ArticleList, {}, [className, styles[view]])}>
             {
                 articles.length > 0
                     ? articles.map((article) => <ArticleListItem key={article.id} article={article} view={view} />)
