@@ -28,19 +28,16 @@ const ArticleList = memo((props:Props) => {
     const renderArticle = (article:Article) => {
         <ArticleListItem article={article} view={view} />;
     };
-    if (isLoading) {
-        return (
-            <div className={classNames(styles.ArticleList, {}, [className, styles[view]])}>
-                {getSkeletons(view)}
-            </div>
-        );
-    }
+
     return (
         <div className={classNames(styles.ArticleList, {}, [className, styles[view]])}>
             {
                 articles.length > 0
                     ? articles.map((article) => <ArticleListItem key={article.id} article={article} view={view} />)
                     : null
+            }
+            {
+                isLoading && getSkeletons(view)
             }
         </div>
     );
