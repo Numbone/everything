@@ -25,7 +25,7 @@ const CommentList = (props:Props) => {
     return (
         <div className={classNames(styles.content, {}, [className])}>
             {comments.length
-                ? comments.map((item) => <CommentCard isLoading={isLoading} className={styles.comment} comment={item} />)
+                ? comments.map((item) => <CommentCard key={item?.id} isLoading={isLoading} className={styles.comment} comment={item} />)
                 : <Text />}
         </div>
     );
