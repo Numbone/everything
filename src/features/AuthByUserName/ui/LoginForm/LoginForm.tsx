@@ -61,7 +61,7 @@ const LoginForm:FC<LoginFormProps> = memo((props:LoginFormProps) => {
 
     return (
         <DynamicModuleLoader
-            removeAfterUnmount
+            removeAfterUnmount={false}
             reducers={initialReducers}
         >
             <div className={classNames(cls.LoginForm, {}, [className])}>
@@ -82,6 +82,7 @@ const LoginForm:FC<LoginFormProps> = memo((props:LoginFormProps) => {
                     onChange={onChangePassword}
                     value={password}
                 />
+                <input type="password" />
                 <Button
                     theme={ButtonTheme.OUTLINE}
                     disabled={isLoading}
