@@ -4,6 +4,7 @@ import {
 import { $api } from 'shared/api/api';
 import { NavigateOptions, To } from 'react-router-dom';
 import { CombinedState, Reducer } from 'redux';
+import { uiReducer } from 'features/ScrollRestoration';
 import { userReducer } from '../../../../entities/User';
 import { counterReducer } from '../../../../entities/Counter/model/slice/counterSlice';
 import { StateSchema } from './StateSchema';
@@ -18,6 +19,7 @@ export function createReduxStore(
         ...asyncReducers,
         counter: counterReducer,
         user: userReducer,
+        ui: uiReducer,
     };
     const reducerManager = createReducerManager(rootReducer);
 

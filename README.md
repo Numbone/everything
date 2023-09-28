@@ -57,3 +57,4 @@
 55. Article. EntityAdapter, thunks, slices. View selector
 56. Infinite scroll hook , load next page
 57. remake Redux mounted
+58. useThrottle
