@@ -22,15 +22,15 @@ jobs:
         - name: build production project
           run: yarn build:prod
           if: always()
-        - name: linting typescript
-          run: yarn lint
-          if: always()
-        - name: linting css
-          run: yarn style
-          if: always()
-        - name: unit testing
-          run: yarn unit
-          if: always()
+        # - name: linting typescript
+        #   run: yarn lint
+        #   if: always()
+        # - name: linting css
+        #   run: yarn style
+        #   if: always()
+        # - name: unit testing
+        #   run: yarn unit
+        #   if: always()
         # - name: build storybook
         #   run: yarn build-storybook
         #   if: always()

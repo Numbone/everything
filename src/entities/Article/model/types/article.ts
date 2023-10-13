@@ -36,6 +36,12 @@ export enum ArticleType {
     ECONOMICS = 'ECONOMICS'
 }
 
+export enum ArticleSortField {
+    VIEWS='views',
+    TITLE='title',
+    CREATED='createdAt'
+}
+
 export interface Article {
     id: string;
     title: string;
