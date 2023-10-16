@@ -16,6 +16,7 @@ import { Page } from 'widjet/Page/Page';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initedArticlePage/initedArticlePage';
 import cls from './ArticlesPage.module.scss';
+import ArticlesPageFilters from '../ArticlesPageFilters/ArticlesPageFilters';
 
 interface ArticlesPageProps {
     className?: string;
@@ -30,13 +31,11 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     const dispatch = useAppDispatch();
     const articles = useSelector(getArticles.selectAll);
     const isLoading = useSelector(getArticlesPageIsLoading);
-    const view = useSelector(getArticlesPageView);
+
     const error = useSelector(getArticlesPageError);
     const inited = useSelector(getArticlesPageInited);
-    const onChangeView = useCallback((view: ArticleView) => {
-        dispatch(articlesPageActions.setView(view));
-    }, [dispatch]);
 
+    const view = useSelector(getArticlesPageView);
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlesPage());
     }, [dispatch]);
@@ -52,7 +51,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
                 onScrollEnd={onLoadNextPart}
                 className={classNames(cls.ArticlesPage, {}, [className])}
             >
-                <ArticleViewSelector view={view} onViewClick={onChangeView} />
+                <ArticlesPageFilters />
                 <ArticleList
                     isLoading={isLoading}
                     view={view}

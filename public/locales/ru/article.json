@@ -1,5 +1,6 @@
 {
   "article.Article not found": "Артикл не найден",
   "article.errorsArticles": "Произошла ошибка при загрузке статьи.",
-  "article.commentary": "Комментарии"
+  "article.commentary": "Комментарии",
+  "article.sorting": "Сортировать по"
 }
