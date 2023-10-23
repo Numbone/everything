@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/className';
 import { useSelector } from 'react-redux';
-import { getArticlesPageView } from 'pages/ArticlesPage/model/selectors/articlesPageSelectors';
-import { ArticleView } from 'entities/Article';
+import { getArticlesPageOrder, getArticlesPageSort, getArticlesPageView } from 'pages/ArticlesPage/model/selectors/articlesPageSelectors';
+import { ArticleSortField, ArticleView } from 'entities/Article';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { articlesPageActions } from 'pages/ArticlesPage/model/slices/articlesPageSlice';
 import { ArticleViewSelector } from 'entities/Article/ui/ArticleViewSelector/ArticleViewSelector';
@@ -10,6 +10,8 @@ import { Select } from 'shared/ui/Select/Select';
 import { useTranslation } from 'react-i18next';
 import { Card } from 'shared/ui/Card/Card';
 import { Input } from 'shared/ui/Input/Input';
+import { ArticleSortSelector } from 'entities/Article/ui/ArticleSortSelector/ArticleSortSelector';
+import { SortOrder } from 'shared/types';
 import styles from './ArticlesPageFilters.module.scss';
 
 interface Props{
@@ -23,15 +25,30 @@ const ArticlesPageFilters = (props:Props) => {
     const dispatch = useAppDispatch();
 
     const view = useSelector(getArticlesPageView);
+    const sort = useSelector(getArticlesPageSort);
+    const order = useSelector(getArticlesPageOrder);
 
     const onChangeView = useCallback((view: ArticleView) => {
         dispatch(articlesPageActions.setView(view));
     }, [dispatch]);
 
+    const onChangeOrder = useCallback((newOrder:SortOrder) => {
+        dispatch(articlesPageActions.setOrder(newOrder));
+    }, [dispatch]);
+
+    const onChangeSort = useCallback((newOrder:ArticleSortField) => {
+        dispatch(articlesPageActions.setSort(newOrder));
+    }, [dispatch]);
+
     return (
         <div className={classNames(styles.content, {}, [className])}>
             <div className={styles.sortWrapper}>
-                <Select label={t('article.sorting')} />
+                <ArticleSortSelector
+                    onChangeOrder={onChangeOrder}
+                    onChangeSort={onChangeSort}
+                    order={order}
+                    sort={sort}
+                />
                 <ArticleViewSelector view={view} onViewClick={onChangeView} />
             </div>
             <Card className={styles.search}>

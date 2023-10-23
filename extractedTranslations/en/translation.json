@@ -13,9 +13,16 @@
   "article": {
     "": "",
     "Article not found": "Article not found",
+    "ascendance": "ascendance",
     "commentary": "commentary",
+    "created": "created",
+    "descendance": "descendance",
     "errors": "errors",
-    "errorsArticles": "errorsArticles"
+    "errorsArticles": "errorsArticles",
+    "sorting": "sorting",
+    "title": "title",
+    "to": "to",
+    "views": "views"
   },
   "commentary": "commentary",
   "commentta": "commentta",
