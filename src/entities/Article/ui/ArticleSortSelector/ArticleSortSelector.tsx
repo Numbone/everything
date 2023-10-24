@@ -24,18 +24,18 @@ const ArticleSortSelector = (props:Props) => {
 
     const { t } = useTranslation('article');
 
-    const orderOptions = useMemo<SelectOption[]>(() => [
+    const orderOptions = useMemo<SelectOption<SortOrder>[]>(() => [
         {
             value: 'asc',
             content: t('article.ascendance'),
         },
         {
-            value: 'des',
+            value: 'desc',
             content: t('article.descendance'),
         },
     ], [t]);
 
-    const sortFieldOptions = useMemo<SelectOption[]>(() => [
+    const sortFieldOptions = useMemo<SelectOption<ArticleSortField>[]>(() => [
         {
             value: ArticleSortField.CREATED,
             content: t('article.created'),
@@ -64,13 +64,14 @@ const ArticleSortSelector = (props:Props) => {
                 options={sortFieldOptions}
                 label={t('article.sorting')}
                 value={sort}
-                onChange={onChangeOrder}
+                onChange={onChangeSort}
             />
             <Select
                 options={orderOptions}
                 label={t('article.to')}
                 value={order}
                 onChange={onChangeOrder}
+                className={styles.order}
             />
         </div>
     );
