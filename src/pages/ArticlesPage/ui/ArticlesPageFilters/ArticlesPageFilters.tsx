@@ -15,6 +15,7 @@ import { Input } from 'shared/ui/Input/Input';
 import { ArticleSortSelector } from 'entities/Article/ui/ArticleSortSelector/ArticleSortSelector';
 import { SortOrder } from 'shared/types';
 import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
+import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
 import styles from './ArticlesPageFilters.module.scss';
 
 interface Props{
@@ -36,6 +37,8 @@ const ArticlesPageFilters = (props:Props) => {
         dispatch(fetchArticlesList({ page: 1, replace: true }));
     }, [dispatch]);
 
+    const debounceFetchData = useDebounce(fetchData, 500);
+
     const onChangeView = useCallback((view: ArticleView) => {
         dispatch(articlesPageActions.setView(view));
     }, [dispatch]);
@@ -55,8 +58,8 @@ const ArticlesPageFilters = (props:Props) => {
     const onChangeSearch = useCallback((newOrder:string) => {
         dispatch(articlesPageActions.setSearch(newOrder));
         dispatch(articlesPageActions.setPage(1));
-        fetchData();
-    }, [dispatch, fetchData]);
+        debounceFetchData();
+    }, [dispatch, debounceFetchData]);
 
     return (
         <div className={classNames(styles.content, {}, [className])}>
