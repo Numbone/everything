@@ -2,9 +2,9 @@ import React, { useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/className';
 import { useSelector } from 'react-redux';
 import {
-    getArticlesPageOrder, getArticlesPageSearch, getArticlesPageSort, getArticlesPageView,
+    getArticlesPageOrder, getArticlesPageSearch, getArticlesPageSort, getArticlesPageType, getArticlesPageView,
 } from 'pages/ArticlesPage/model/selectors/articlesPageSelectors';
-import { ArticleSortField, ArticleView } from 'entities/Article';
+import { ArticleSortField, ArticleType, ArticleView } from 'entities/Article';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { articlesPageActions } from 'pages/ArticlesPage/model/slices/articlesPageSlice';
 import { ArticleViewSelector } from 'entities/Article/ui/ArticleViewSelector/ArticleViewSelector';
@@ -16,6 +16,7 @@ import { ArticleSortSelector } from 'entities/Article/ui/ArticleSortSelector/Art
 import { SortOrder } from 'shared/types';
 import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
+import { ArticleTypeTabs } from 'entities/Article/ui/ArticleTypeTabs/ArticleTypeTabs';
 import styles from './ArticlesPageFilters.module.scss';
 
 interface Props{
@@ -32,6 +33,7 @@ const ArticlesPageFilters = (props:Props) => {
     const sort = useSelector(getArticlesPageSort);
     const order = useSelector(getArticlesPageOrder);
     const search = useSelector(getArticlesPageSearch);
+    const type = useSelector(getArticlesPageType);
 
     const fetchData = useCallback(() => {
         dispatch(fetchArticlesList({ page: 1, replace: true }));
@@ -61,6 +63,12 @@ const ArticlesPageFilters = (props:Props) => {
         debounceFetchData();
     }, [dispatch, debounceFetchData]);
 
+    const onChangeType = useCallback((value: ArticleType) => {
+        dispatch(articlesPageActions.setType(value));
+        dispatch(articlesPageActions.setPage(1));
+        debounceFetchData();
+    }, [dispatch, debounceFetchData]);
+
     return (
         <div className={classNames(styles.content, {}, [className])}>
             <div className={styles.sortWrapper}>
@@ -75,7 +83,11 @@ const ArticlesPageFilters = (props:Props) => {
             <Card className={styles.search}>
                 <Input onChange={onChangeSearch} value={search} placeholder="search" />
             </Card>
-
+            <ArticleTypeTabs
+                value={type}
+                onChangeType={onChangeType}
+                className={styles.tabs}
+            />
         </div>
     );
 };

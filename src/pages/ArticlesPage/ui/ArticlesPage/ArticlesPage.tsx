@@ -13,6 +13,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
 import { ArticleViewSelector } from 'entities/Article/ui/ArticleViewSelector/ArticleViewSelector';
 import { Page } from 'widjet/Page/Page';
+import { useSearchParams } from 'react-router-dom';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initedArticlePage/initedArticlePage';
 import cls from './ArticlesPage.module.scss';
@@ -35,6 +36,8 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     const error = useSelector(getArticlesPageError);
     const inited = useSelector(getArticlesPageInited);
 
+    const [searchParams] = useSearchParams();
+
     const view = useSelector(getArticlesPageView);
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlesPage());
@@ -42,7 +45,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
 
     useInitialEffect(() => {
         if (!inited) {
-            dispatch(initArticlesPage());
+            dispatch(initArticlesPage(searchParams));
         }
     });
     return (

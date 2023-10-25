@@ -1,6 +1,6 @@
 import { ArticleSortField } from 'entities/Article/model/types/article';
 import { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
-import { Article, ArticleView } from './model/types/article';
+import { Article, ArticleView, ArticleType } from './model/types/article';
 import { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
 import { ArticleList } from './ui/ArticleList/ArticleList';
 
@@ -10,3 +10,4 @@ export { ArticleDetailsSchema };
 export { ArticleView };
 export { ArticleList };
 export { ArticleSortField };
+export { ArticleType };
