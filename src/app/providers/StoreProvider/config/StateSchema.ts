@@ -8,7 +8,7 @@ import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features';
 import { NavigateOptions, To } from 'react-router-dom';
 import { ArticleDetailsSchema } from 'entities/Article';
-import { ArticleDetailsCommentSchema } from 'pages/ArticleDetailsPage';
+import { ArticleDetailsCommentSchema, ArticleDetailsRecommendationsSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlesPage/model/types/articlesPageSchema';
 import { ScrollRestorationSchema } from 'features/ScrollRestoration';
@@ -22,6 +22,7 @@ export interface StateSchema{
     profile?:ProfileSchema
     articleDetails?:ArticleDetailsSchema
     articleDetailsComments?:ArticleDetailsCommentSchema,
+    ArticleDetailsRecommendations:ArticleDetailsRecommendationsSchema
     addCommentForm?: AddCommentFormSchema;
     articlesPage?:ArticlesPageSchema;
 
