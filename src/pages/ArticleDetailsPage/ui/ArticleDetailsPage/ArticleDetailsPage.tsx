@@ -14,7 +14,9 @@ import { fetchCommentsByArticleId } from 'pages/ArticleDetailsPage/model/service
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AddCommentForm } from 'features/addCommentForm';
 import { addCommentForArticle } from 'pages/ArticleDetailsPage/model/service/addCommentForArticle/addCommentForArticle';
+import { articleDetailsPageRecommendationsReducer, getArticleRecommendations } from 'pages/ArticleDetailsPage/model/slice/articleRecommendationSlice';
 import cls from './ArticleDetailsPage.module.scss';
+import { getArticleRecommendationsIsLoading } from 'pages/ArticleDetailsPage/model/selectors/recommendation';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -22,6 +24,7 @@ interface ArticleDetailsPageProps {
 
 const reducer:ReducersList = {
     articleDetailsComments: articleDetailsCommentsReducer,
+    articleDetailsRecommendations: articleDetailsPageRecommendationsReducer,
 };
 
 const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
@@ -30,7 +33,9 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     const { t } = useTranslation('article');
     const { id } = useParams<{id:string}>();
     const comments = useSelector(getArticleComments.selectAll);
+    const recommendation = useSelector(getArticleRecommendations.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+    const recommendationIsLoading = useSelector(getArticleRecommendationsIsLoading);
     const onSendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text));
     }, [dispatch]);

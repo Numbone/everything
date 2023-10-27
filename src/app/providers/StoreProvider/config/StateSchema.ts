@@ -22,7 +22,7 @@ export interface StateSchema{
     profile?:ProfileSchema
     articleDetails?:ArticleDetailsSchema
     articleDetailsComments?:ArticleDetailsCommentSchema,
-    ArticleDetailsRecommendations:ArticleDetailsRecommendationsSchema
+    articleDetailsRecommendations?:ArticleDetailsRecommendationsSchema
     addCommentForm?: AddCommentFormSchema;
     articlesPage?:ArticlesPageSchema;
 
