@@ -9,7 +9,7 @@ import { userReducer } from '../../../../entities/User';
 import { counterReducer } from '../../../../entities/Counter/model/slice/counterSlice';
 import { StateSchema } from './StateSchema';
 import { createReducerManager } from './reducerManager';
-
+//
 export function createReduxStore(
     initialState?: StateSchema,
     asyncReducers?: ReducersMapObject<StateSchema>,

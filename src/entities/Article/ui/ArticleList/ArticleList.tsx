@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/className';
 import { Text } from 'shared/ui';
@@ -12,7 +12,8 @@ interface Props{
     className?: string;
     articles:Article[];
     isLoading?: boolean;
-    view:ArticleView
+    view?:ArticleView;
+    target?: HTMLAttributeAnchorTarget;
 }
 const ArticleList = memo((props:Props) => {
     const { t } = useTranslation();
@@ -21,6 +22,7 @@ const ArticleList = memo((props:Props) => {
         isLoading,
         view = ArticleView.SMALL,
         className,
+        target,
     } = props;
     const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
         .fill(0)
@@ -43,7 +45,7 @@ const ArticleList = memo((props:Props) => {
         <div className={classNames(styles.ArticleList, {}, [className, styles[view]])}>
             {
                 articles.length > 0
-                    ? articles.map((article) => <ArticleListItem key={article.id} article={article} view={view} />)
+                    ? articles.map((article) => <ArticleListItem target={target} key={article.id} article={article} view={view} />)
                     : null
             }
             {

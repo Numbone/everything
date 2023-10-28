@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback, useEffect } from 'react';
 import { classNames } from 'shared/lib/classNames/className';
-import { ArticleDetails } from 'entities/Article';
+import { ArticleDetails, ArticleList } from 'entities/Article';
 import { useParams } from 'react-router-dom';
 import { Text } from 'shared/ui';
 import { CommentList } from 'entities/Comment';
@@ -15,16 +15,18 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AddCommentForm } from 'features/addCommentForm';
 import { addCommentForArticle } from 'pages/ArticleDetailsPage/model/service/addCommentForArticle/addCommentForArticle';
 import { articleDetailsPageRecommendationsReducer, getArticleRecommendations } from 'pages/ArticleDetailsPage/model/slice/articleRecommendationSlice';
-import cls from './ArticleDetailsPage.module.scss';
 import { getArticleRecommendationsIsLoading } from 'pages/ArticleDetailsPage/model/selectors/recommendation';
+import { TextSize } from 'shared/ui/Text/Text';
+import { fetchArticleRecommendations } from 'pages/ArticleDetailsPage/model/service/fetchArticleRecommendations/fetchArticleRecommendations';
+import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slice';
+import cls from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
     className?: string;
 }
 
 const reducer:ReducersList = {
-    articleDetailsComments: articleDetailsCommentsReducer,
-    articleDetailsRecommendations: articleDetailsPageRecommendationsReducer,
+    articleDetailsPage: articleDetailsPageReducer,
 };
 
 const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
@@ -41,6 +43,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     }, [dispatch]);
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
+        dispatch(fetchArticleRecommendations());
     });
 
     if (!id) {
@@ -55,7 +58,14 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         <DynamicModuleLoader reducers={reducer} removeAfterUnmount>
             <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <ArticleDetails id={id} />
-                <Text className={cls.commentTitle} title={t('article.commentary')} />
+                <Text size={TextSize.L} className={cls.commentTitle} title={t('article.recommendation')} />
+                <ArticleList
+                    className={cls.recommendation}
+                    articles={recommendation}
+                    isLoading={recommendationIsLoading}
+                    target="_blank"
+                />
+                <Text size={TextSize.L} className={cls.commentTitle} title={t('article.commentary')} />
                 <AddCommentForm onSendComment={onSendComment} />
                 <CommentList isLoading={commentsIsLoading} comments={comments} />
 

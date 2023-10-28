@@ -8,7 +8,7 @@ import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features';
 import { NavigateOptions, To } from 'react-router-dom';
 import { ArticleDetailsSchema } from 'entities/Article';
-import { ArticleDetailsCommentSchema, ArticleDetailsRecommendationsSchema } from 'pages/ArticleDetailsPage';
+import { ArticleDetailsCommentSchema, ArticleDetailsPageSchema, ArticleDetailsRecommendationsSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlesPage/model/types/articlesPageSchema';
 import { ScrollRestorationSchema } from 'features/ScrollRestoration';
@@ -20,12 +20,13 @@ export interface StateSchema{
     // async reducers
     loginForm?:LoginSchema
     profile?:ProfileSchema
-    articleDetails?:ArticleDetailsSchema
+    articleDetails?:ArticleDetailsSchema,
+    articleDetailsPage?: ArticleDetailsPageSchema;
     articleDetailsComments?:ArticleDetailsCommentSchema,
-    articleDetailsRecommendations?:ArticleDetailsRecommendationsSchema
+    // articleDetailsRecommendations?:ArticleDetailsRecommendationsSchema
     addCommentForm?: AddCommentFormSchema;
     articlesPage?:ArticlesPageSchema;
-
+//
 }
 
 export type StateSchemaKey=keyof StateSchema;
