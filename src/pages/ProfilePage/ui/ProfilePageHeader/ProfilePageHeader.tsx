@@ -5,7 +5,7 @@ import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { classNames } from 'shared/lib/classNames/className';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
-import { getUserAuthData } from 'entities/User';
+import { getUserAuthData } from '../../../../entities/User';
 import {
     getProfileData, getProfileReadonly, profileActions, updateProfileData,
 } from '../../../../entities/Profile';
