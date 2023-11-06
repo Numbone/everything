@@ -43,14 +43,32 @@ const ArticleList = memo((props:Props) => {
 
     return (
         <div className={classNames(styles.ArticleList, {}, [className, styles[view]])}>
-            {
+            {/* {
                 articles.length > 0
                     ? articles.map((article) => <ArticleListItem target={target} key={article.id} article={article} view={view} />)
                     : null
             }
             {
                 isLoading && getSkeletons(view)
-            }
+            } */}
+            <AutoSizer disableHeight>
+                {({ width }) => (
+                    <List
+                        ref="List"
+                        className={styles.List}
+                        height={listHeight}
+                        overscanRowCount={overscanRowCount}
+                        noRowsRenderer={this._noRowsRenderer}
+                        rowCount={rowCount}
+                        rowHeight={
+                            useDynamicRowHeight ? this._getRowHeight : listRowHeight
+                        }
+                        rowRenderer={this._rowRenderer}
+                        scrollToIndex={scrollToIndex}
+                        width={width}
+                    />
+                )}
+            </AutoSizer>
         </div>
     );
 });
