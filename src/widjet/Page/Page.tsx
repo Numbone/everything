@@ -18,6 +18,9 @@ interface Props{
     className?: string;
     onScrollEnd?: () => void;
 }
+
+export const PAGE_ID = 'PAGE_ID';
+
 const Page = (props:Props) => {
     const { children, className, onScrollEnd } = props;
     const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
@@ -43,6 +46,7 @@ const Page = (props:Props) => {
             className={classNames(styles.page_wrapper, {}, [className])}
             ref={wrapperRef}
             onScroll={onScroll}
+            id={PAGE_ID}
         >
             {children}
             {
