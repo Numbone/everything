@@ -62,3 +62,4 @@
 60. ArticleRecommendation entity add ArticleDetailsPage 
 61. add Create article and edit 
 62. add vercel App
+63. react virtualize package add
