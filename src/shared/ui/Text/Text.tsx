@@ -35,8 +35,6 @@ const mapSizeHeaderTag:Record<TextSize, HeaderTagType> = {
     [TextSize.L]: 'h1',
 };
 
-const HeaderTag= mapSizeHeaderTag[size]
-
 export const Text = memo((props: TextProps) => {
     const {
         className,
@@ -51,6 +49,7 @@ export const Text = memo((props: TextProps) => {
         [cls[align]]: true,
         [cls[size]]: true,
     };
+    const HeaderTag = mapSizeHeaderTag[size];
     return (
         <div className={classNames(cls.Text, mods, [className])}>
             {title && <HeaderTag className={cls.title}>{title}</HeaderTag>}
