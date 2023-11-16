@@ -49,7 +49,6 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'linebreak-style': ['off', 'unix'],
-        'path-checker': 'error',
     },
     globals: {
         __IS_DEV__: true,
