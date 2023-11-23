@@ -1,4 +1,3 @@
-
 import { Listbox } from '@headlessui/react';
 import { Counter } from 'entities/Counter';
 import React, { FC } from 'react';
@@ -20,7 +19,17 @@ const MainPage:FC<MainPageProps> = ({ className }) => {
             1
             <HStack>
                 <div>1</div>
-                <MyListbox />
+                <MyListbox
+                    onChange={(value) => console.log(value)}
+                    defaultValue="Select value"
+                    value={undefined}
+                    items={[
+                        { content: '1', value: '1', disabled: false },
+                        { content: '2', value: '2', disabled: false },
+                        { content: '3', value: '3', disabled: false },
+                        { content: '4', value: '1', disabled: false },
+                    ]}
+                />
             </HStack>
             <div>12313</div>
             <div>12313</div>
