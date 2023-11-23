@@ -25,6 +25,7 @@
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
     "@reduxjs/toolkit": "^1.9.5",
     "@storybook/testing-library": "^0.2.0",
     "@svgr/webpack": "^8.0.1",

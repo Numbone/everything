@@ -69,7 +69,7 @@ export const Flex = (props:FlexProps) => {
 
     return (
         <div className={classNames(cls.Flex, {}, [])}>
-            Flex
+            {children}
         </div>
     );
 };
