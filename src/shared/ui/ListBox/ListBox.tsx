@@ -29,14 +29,6 @@ const mapDirectionClass: Record<DropdownDirection, string> = {
     top: cls.optionsTop,
 };
 
-const people = [
-    { id: 1, name: 'Durward Reynolds', unavailable: false },
-    { id: 2, name: 'Kenton Towne', unavailable: false },
-    { id: 3, name: 'Therese Wunsch', unavailable: false },
-    { id: 4, name: 'Benedict Kessler', unavailable: false },
-    { id: 5, name: 'Katelyn Rohan', unavailable: false },
-];
-
 export function MyListbox(props:ListBoxProps) {
     const {
         className,
@@ -48,6 +40,8 @@ export function MyListbox(props:ListBoxProps) {
         direction = 'bottom',
         label,
     } = props;
+
+    const optionsClasses = [mapDirectionClass[direction]];
 
     return (
         <HStack gap="4">
@@ -64,7 +58,7 @@ export function MyListbox(props:ListBoxProps) {
                         {value ?? defaultValue}
                     </Button>
                 </HListBox.Button>
-                <HListBox.Options className={cls.options}>
+                <HListBox.Options className={classNames(cls.options, {}, optionsClasses)}>
                     {items?.map((item) => (
                         <HListBox.Option
                             key={item.value}
