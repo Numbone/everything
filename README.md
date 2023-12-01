@@ -68,3 +68,6 @@
 66. Semantic UI
 67. Headless ui
 68. Dropdown custom
+69. add custom generate Slice 
+70. add redux-toolkit 
+

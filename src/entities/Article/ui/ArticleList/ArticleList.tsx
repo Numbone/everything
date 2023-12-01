@@ -40,7 +40,7 @@ const ArticleList = memo((props:Props) => {
     const isBig = view === ArticleView.BIG;
 
     const itemsPerRow = isBig ? 1 : 5;
-    const rowCount = isBig ? articles.length : Math.ceil(articles.length / itemsPerRow);
+    const rowCount = isBig ? articles?.length : Math.ceil(articles?.length ?? 0 / itemsPerRow);
     const rowRender = ({
         index, isScrolling, key, style,
     }:ListRowProps) => {
@@ -71,7 +71,7 @@ const ArticleList = memo((props:Props) => {
         );
     };
 
-    if (!isLoading && !articles.length) {
+    if (!isLoading && !articles?.length) {
         return (
             <div className={classNames(styles.ArticleList, {}, [className, styles[view]])}>
                 <Text size={TextSize.L} title={t('Статьи не найдены')} />

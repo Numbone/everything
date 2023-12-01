@@ -19,6 +19,7 @@ import { getArticleRecommendationsIsLoading } from 'pages/ArticleDetailsPage/mod
 import { TextSize } from 'shared/ui/Text/Text';
 import { fetchArticleRecommendations } from 'pages/ArticleDetailsPage/model/service/fetchArticleRecommendations/fetchArticleRecommendations';
 import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slice';
+import { ArticleRecommendationList } from 'features/articleRecommendationList';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsPageHeader } from '../ArticleDetailPageHeader/ArticleDetailPageHeader';
 
@@ -36,15 +37,15 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     const { t } = useTranslation('article');
     const { id } = useParams<{id:string}>();
     const comments = useSelector(getArticleComments.selectAll);
-    const recommendation = useSelector(getArticleRecommendations.selectAll);
+    // const recommendation = useSelector(getArticleRecommendations.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
-    const recommendationIsLoading = useSelector(getArticleRecommendationsIsLoading);
+    // const recommendationIsLoading = useSelector(getArticleRecommendationsIsLoading);
     const onSendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text));
     }, [dispatch]);
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
-        dispatch(fetchArticleRecommendations());
+        // dispatch(fetchArticleRecommendations());
     });
 
     if (!id) {
@@ -60,13 +61,14 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
             <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
-                <Text size={TextSize.L} className={cls.commentTitle} title={t('article.recommendation')} />
+                <ArticleRecommendationList />
+                {/* <Text size={TextSize.L} className={cls.commentTitle} title={t('article.recommendation')} />
                 <ArticleList
                     className={cls.recommendation}
                     articles={recommendation}
                     isLoading={recommendationIsLoading}
                     target="_blank"
-                />
+                /> */}
                 <Text size={TextSize.L} className={cls.commentTitle} title={t('article.commentary')} />
                 <AddCommentForm onSendComment={onSendComment} />
                 <CommentList isLoading={commentsIsLoading} comments={comments} />
