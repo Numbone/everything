@@ -1,27 +1,21 @@
-import { useTranslation } from 'react-i18next';
-import { memo, useCallback, useEffect } from 'react';
-import { classNames } from 'shared/lib/classNames/className';
-import { ArticleDetails, ArticleList } from 'entities/Article';
-import { useParams } from 'react-router-dom';
-import { Text } from 'shared/ui';
-import { CommentList } from 'entities/Comment';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { articleDetailsCommentsReducer, getArticleComments } from 'pages/ArticleDetailsPage/model/slice/articleCommentSlice';
-import { useDispatch, useSelector } from 'react-redux';
-import { getArticleCommentsIsLoading } from 'pages/ArticleDetailsPage/model/selectors/comment';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { fetchCommentsByArticleId } from 'pages/ArticleDetailsPage/model/service/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { AddCommentForm } from 'features/addCommentForm';
-import { addCommentForArticle } from 'pages/ArticleDetailsPage/model/service/addCommentForArticle/addCommentForArticle';
-import { articleDetailsPageRecommendationsReducer, getArticleRecommendations } from 'pages/ArticleDetailsPage/model/slice/articleRecommendationSlice';
-import { getArticleRecommendationsIsLoading } from 'pages/ArticleDetailsPage/model/selectors/recommendation';
-import { TextSize } from 'shared/ui/Text/Text';
-import { fetchArticleRecommendations } from 'pages/ArticleDetailsPage/model/service/fetchArticleRecommendations/fetchArticleRecommendations';
-import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slice';
+import { ArticleDetails } from 'entities/Article';
 import { ArticleRecommendationList } from 'features/articleRecommendationList';
-import cls from './ArticleDetailsPage.module.scss';
+import { getArticleCommentsIsLoading } from 'pages/ArticleDetailsPage/model/selectors/comment';
+import { addCommentForArticle } from 'pages/ArticleDetailsPage/model/service/addCommentForArticle/addCommentForArticle';
+import { fetchCommentsByArticleId } from 'pages/ArticleDetailsPage/model/service/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slice';
+import { getArticleComments } from 'pages/ArticleDetailsPage/model/slice/articleCommentSlice';
+import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { classNames } from 'shared/lib/classNames/className';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import ArticleDetailComments from '../ArticleDetailComments/ArticleDetailComments';
 import { ArticleDetailsPageHeader } from '../ArticleDetailPageHeader/ArticleDetailPageHeader';
+import cls from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -69,10 +63,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
                     isLoading={recommendationIsLoading}
                     target="_blank"
                 /> */}
-                <Text size={TextSize.L} className={cls.commentTitle} title={t('article.commentary')} />
-                <AddCommentForm onSendComment={onSendComment} />
-                <CommentList isLoading={commentsIsLoading} comments={comments} />
-
+                <ArticleDetailComments id={id} />
             </div>
         </DynamicModuleLoader>
 
