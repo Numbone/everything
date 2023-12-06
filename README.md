@@ -80,5 +80,6 @@
 68. Dropdown custom
 69. add custom generate Slice 
 70. add redux-toolkit 
-71. fix bug with virtualization and windowScroller
-72. divided by Role 
+71. add html reports test
+72. fix bug with virtualization and windowScroller
+73. divided by Role 
