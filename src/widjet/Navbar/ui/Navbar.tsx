@@ -3,7 +3,9 @@ import { classNames } from 'shared/lib/classNames/className';
 import { useTranslation } from 'react-i18next';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features';
-import { getUserAuthData, userActions } from 'entities/User';
+import {
+    getUserAuthData, isUserAdmin, isUserManager, userActions,
+} from 'entities/User';
 import { useDispatch, useSelector } from 'react-redux';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
@@ -18,6 +20,8 @@ interface NavbarProps {
 const Navbar = ({ className }: NavbarProps) => {
     const { t } = useTranslation();
     const dispatch = useDispatch();
+    const isAdmin = useSelector(isUserAdmin);
+    const isManager = useSelector(isUserManager);
     const authData = useSelector(getUserAuthData);
     const [isOpen, setIsOpen] = useState(false);
     const onCloseModal = useCallback(() => {
@@ -30,7 +34,8 @@ const Navbar = ({ className }: NavbarProps) => {
     const onLogout = useCallback(() => {
         dispatch(userActions.logout());
     }, [dispatch]);
-    console.log(isOpen, 'isOpen');
+    const isAdminPanelAvailable = isAdmin || isManager;
+
     if (authData) {
         return (
             <div className={classNames(cls.navbar, {}, [className])}>
@@ -50,6 +55,10 @@ const Navbar = ({ className }: NavbarProps) => {
                     direction="bottom left"
                     className={cls.dropdown}
                     items={[
+                        ...(isAdminPanelAvailable ? [{
+                            content: t('Админ'),
+                            href: RoutePath.admin_panel,
+                        }] : []),
                         {
                             content: t('Профиль'),
                             href: RoutePath.profile + authData.id,

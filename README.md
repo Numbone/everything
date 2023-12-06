@@ -1,5 +1,5 @@
 # React App Admin Panel 
-# How to start project
+## How to start project
     - yarn start(Frontend)
     - yarn back(Backend)
 ## Stack:
@@ -9,7 +9,7 @@
     - Headless UI
     - ReactWindow
     - Jest
-# Theme
+### Theme
 1. **config webpack entry and output plugins**
 2. *add ts node ts-loader , tsconfig.json, add import skills* 
 3. ~~decompositions webpack config to try~~

@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Page } from 'widjet/Page/Page';
 
 interface AboutPageProps{
     className?:string;
@@ -7,7 +8,7 @@ interface AboutPageProps{
 const AboutPage:FC<AboutPageProps> = ({ className }) => {
     const { t } = useTranslation('about');
     return (
-        <div>{t('about')}</div>
+        <Page>{t('about')}</Page>
     );
 };
 

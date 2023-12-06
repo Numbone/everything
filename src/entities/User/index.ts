@@ -1,3 +1,5 @@
+export { isUserAdmin, isUserManager } from './model/selectors/roleSelector/roleSelector';
+
 export {
     getUserAuthData,
 } from './model/selectors/getUserAuthData/getUserAuthData';

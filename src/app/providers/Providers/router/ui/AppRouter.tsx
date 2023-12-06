@@ -30,8 +30,8 @@ const AppRouter = () => {
                 key={route.path}
                 path={route.path}
                 element={
-                    // FIXME: fix with router route.authOnly ? <RequireAuth>{element}</RequireAuth> :
-                    element
+                    route.authOnly ? <RequireAuth roles={route?.roles}>{element}</RequireAuth>
+                        : element
                 }
             />
         );
@@ -39,8 +39,8 @@ const AppRouter = () => {
 
     return (
         <Routes>
-            {/* {Object.values(routeConfig)?.map(renderWithWrapper)} */}
-            {routes.map(({ element, path }) => (
+            {Object.values(routeConfig)?.map(renderWithWrapper)}
+            {/* {routes.map(({ element, path }) => (
                 <Route
                     key={path}
                     element={(
@@ -50,7 +50,7 @@ const AppRouter = () => {
                     )}
                     path={path}
                 />
-            ))}
+            ))} */}
         </Routes>
     );
 };

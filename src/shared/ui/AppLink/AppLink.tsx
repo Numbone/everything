@@ -26,4 +26,4 @@ const AppLink: FC<AppLinkProps> = (props) => {
     );
 };
 
-export default memo(AppLink);
+export default (AppLink);
