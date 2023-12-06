@@ -13,7 +13,7 @@ export const updateProfileData = createAsyncThunk<
         'profile/updateProfileData',
         async (_, thunkApi) => {
             const { extra, rejectWithValue, getState } = thunkApi;
-
+            // test
             const formData = getProfileForm(getState());
 
             const errors = validateProfileData(formData);
