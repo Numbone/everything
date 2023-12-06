@@ -1,16 +1,18 @@
-import React, { HTMLAttributeAnchorTarget, memo } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import {
+    List,
+    ListRowProps,
+    WindowScroller,
+} from 'react-virtualized';
 import { classNames } from 'shared/lib/classNames/className';
 import { Text } from 'shared/ui';
 import { TextSize } from 'shared/ui/Text/Text';
-import {
-    AutoSizer, List, WindowScroller, ListRowProps,
-} from 'react-virtualized';
 import { PAGE_ID } from 'widjet/Page/Page';
-import styles from './ArticleList.module.scss';
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
+import styles from './ArticleList.module.scss';
 
 interface Props{
     className?: string;
@@ -18,6 +20,7 @@ interface Props{
     isLoading?: boolean;
     view?:ArticleView;
     target?: HTMLAttributeAnchorTarget;
+    virtualized?: boolean;
 }
 const ArticleList = memo((props:Props) => {
     const { t } = useTranslation();
@@ -27,6 +30,7 @@ const ArticleList = memo((props:Props) => {
         view = ArticleView.SMALL,
         className,
         target,
+        virtualized,
     } = props;
     const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
         .fill(0)
@@ -39,19 +43,18 @@ const ArticleList = memo((props:Props) => {
 
     const isBig = view === ArticleView.BIG;
 
-    const itemsPerRow = isBig ? 1 : 5;
-    const rowCount = isBig ? articles?.length : Math.ceil(articles?.length ?? 0 / itemsPerRow);
+    const itemsPerRow = isBig ? 1 : 3;
+    const rowCount = isBig ? articles?.length : Math.ceil(articles.length / itemsPerRow);
     const rowRender = ({
         index, isScrolling, key, style,
     }:ListRowProps) => {
         const items = [];
         const fromIndex = index * itemsPerRow;
         const toIndex = Math.min(fromIndex + itemsPerRow, articles.length);
-        // eslint-disable-next-line no-plusplus
-        for (let i = fromIndex; i < toIndex; i++) {
+        for (let i = fromIndex; i < toIndex; i += 1) {
             items.push(
                 <ArticleListItem
-                    article={articles[index]}
+                    article={articles[i]}
                     view={view}
                     target={target}
                     className={styles.card}
@@ -107,17 +110,35 @@ const ArticleList = memo((props:Props) => {
                     ref={registerChild as any}
                     className={classNames(styles.ArticleList, {}, [className, styles[view]])}
                 >
-                    <List
-                        height={height ?? 700}
-                        rowCount={rowCount}
-                        rowHeight={isBig ? 700 : 330}
-                        rowRenderer={rowRender}
-                        width={width ? width - 80 : 700}
-                        autoHeight
-                        onScroll={onChildScroll}
-                        isScrolling={isScrolling}
-                        scrollTop={scrollTop}
-                    />
+                    {
+                        virtualized
+                            ? (
+                                <List
+                                    height={height ?? 700}
+                                    rowCount={rowCount}
+                                    rowHeight={isBig ? 700 : 330}
+                                    rowRenderer={rowRender}
+                                    width={width ? width - 80 : 700}
+                                    autoHeight
+                                    onScroll={onChildScroll}
+                                    isScrolling={isScrolling}
+                                    scrollTop={scrollTop}
+                                />
+                            )
+                            : (
+                                articles.map((item) => (
+                                    <ArticleListItem
+                                        article={item}
+                                        view={view}
+                                        key={item.id}
+                                        target={target}
+                                        className={styles.card}
+                                    />
+                                ))
+                            )
+
+                    }
+
                     { isLoading && getSkeletons(view)}
                 </div>
             )}

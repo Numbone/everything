@@ -41,7 +41,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     }, [dispatch]);
 
     return (
-        <DynamicModuleLoader reducers={reducer} removeAfterUnmount={false}>
+        <DynamicModuleLoader reducers={reducer} removeAfterUnmount>
             <Page
                 onScrollEnd={onLoadNextPart}
                 className={classNames(cls.ArticlesPage, {}, [className])}

@@ -1,5 +1,15 @@
-# everything
-## everything you to know that will be middle 
+# React App Admin Panel 
+# How to start project
+    - yarn start(Frontend)
+    - yarn back(Backend)
+## Stack:
+    - Webpack
+    - React 18.2
+    - Redux , RTK query
+    - Headless UI
+    - ReactWindow
+    - Jest
+# Theme
 1. **config webpack entry and output plugins**
 2. *add ts node ts-loader , tsconfig.json, add import skills* 
 3. ~~decompositions webpack config to try~~
@@ -69,5 +79,6 @@
 67. Headless ui
 68. Dropdown custom
 69. add custom generate Slice 
-70. add redux-toolkit 17:06
-
+70. add redux-toolkit 
+71. fix bug with virtualization and windowScroller
+72. divided by Role 
