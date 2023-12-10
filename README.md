@@ -83,3 +83,5 @@
 71. add html reports test
 72. fix bug with virtualization and windowScroller
 73. divided by Role 
+74. fixed bag by stack 
+75. update react 18.2
