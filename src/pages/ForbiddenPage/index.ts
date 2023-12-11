@@ -1,2 +1,2 @@
 export { ForbiddenPage } from './ui/ForbiddenPage/ForbiddenPage';
-export { ForbiddenPageSchema } from './model/types/ForbiddenPageSchema';
+export type { ForbiddenPageSchema } from './model/types/ForbiddenPageSchema';

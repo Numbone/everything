@@ -8,7 +8,7 @@ import { ArticleList } from './ui/ArticleList/ArticleList';
 
 export { ArticleDetails };
 export type { Article };
-export { ArticleDetailsSchema };
+export type { ArticleDetailsSchema };
 export { ArticleView };
 export { ArticleList };
 export { ArticleSortField };

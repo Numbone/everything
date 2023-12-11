@@ -2,5 +2,5 @@ import { uiReducer, uiActions } from 'features/ScrollRestoration/model/slices/Sc
 import { getUIScrollByPath } from './model/selectors/getUIScroll';
 
 export { getUIScrollByPath };
-export { ScrollRestorationSchema } from './model/types/ScrollSchema';
+export type { ScrollRestorationSchema } from './model/types/ScrollSchema';
 export { uiReducer, uiActions };

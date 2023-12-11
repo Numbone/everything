@@ -11,6 +11,7 @@ import { getProfileValidateErrors } from './model/selectors/getProfileValidateEr
 import { getProfileForm } from './model/selectors/getProfileForm/getProfileForm';
 
 export {
-    getProfileReadonly, updateProfileData, ProfileCard, fetchProfileData, profileActions, profileReducer, Profile, ProfileSchema,
+    getProfileReadonly, updateProfileData, ProfileCard, fetchProfileData, profileActions, profileReducer,
     getProfileError, getProfileIsLoading, getProfileData, getProfileValidateErrors, getProfileForm, ValidateProfileError,
 };
+export type { Profile, ProfileSchema };

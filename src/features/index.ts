@@ -3,5 +3,5 @@ import { LoginSchema } from './AuthByUserName/model/type/loginSchema';
 import { loginReducer } from './AuthByUserName/model/slice/loginSlice';
 
 export { LoginModal };
-export { LoginSchema };
+export type { LoginSchema };
 export { loginReducer };

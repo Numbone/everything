@@ -1,3 +1,3 @@
 import { StateSchema } from '../providers/StoreProvider';
 
-export { StateSchema };
+export type { StateSchema };
