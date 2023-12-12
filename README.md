@@ -86,3 +86,4 @@
 74. fixed bag by stack 
 75. update react 18.2
 76.  add isolatedModules true
+77. add circular dependency plugin 
