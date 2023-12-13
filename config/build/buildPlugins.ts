@@ -8,6 +8,7 @@ import CopyPlugin from 'copy-webpack-plugin';
 import CircularDependencyPlugin from 'circular-dependency-plugin';
 import { BuildOptions } from './types/config';
 
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 export function buildPlugins({ paths, isDev, project }:BuildOptions):webpack.WebpackPluginInstance[] {
@@ -36,6 +37,15 @@ export function buildPlugins({ paths, isDev, project }:BuildOptions):webpack.Web
         //     // add errors to webpack instead of warnings
         //     failOnError: true,
         // }),
+        new ForkTsCheckerWebpackPlugin({
+            typescript: {
+                diagnosticOptions: {
+                    semantic: true,
+                    syntactic: true,
+                },
+                mode: 'write-references',
+            },
+        }),
     ];
 
     if (isDev) {
