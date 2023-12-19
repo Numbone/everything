@@ -68,7 +68,7 @@ export const Flex = (props:FlexProps) => {
     };
 
     return (
-        <div className={classNames(cls.Flex, {}, [])}>
+        <div className={classNames(cls.Flex, mods, classes)}>
             {children}
         </div>
     );

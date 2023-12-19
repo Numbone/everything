@@ -87,4 +87,5 @@
 75. update react 18.2
 76.  add isolatedModules true
 77. add circular dependency plugin 
-78. add babel loader and plugon babelRemovePropsPlugin 
+78. add babel loader and plugin babelRemovePropsPlugin 
+79. add Popover component use in Navbar component

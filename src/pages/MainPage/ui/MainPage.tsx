@@ -1,8 +1,6 @@
-import { Listbox } from '@headlessui/react';
-import { Counter } from 'entities/Counter';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { MyListbox } from 'shared/ui/ListBox/ListBox';
+import { ListBox } from 'shared/ui/Popups';
 import { HStack } from 'shared/ui/Stack/HStack/HStack';
 import { Page } from 'widjet/Page/Page';
 
@@ -19,7 +17,7 @@ const MainPage:FC<MainPageProps> = ({ className }) => {
             1
             <HStack>
                 <div>1</div>
-                <MyListbox
+                <ListBox
                     onChange={(value) => console.log(value)}
                     defaultValue="Select value"
                     value={undefined}
