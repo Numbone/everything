@@ -16,6 +16,7 @@ import { HStack } from 'shared/ui/Stack/HStack/HStack';
 import { Icon } from 'shared/ui/Icon/Icon';
 import NotificationIcon from 'shared/assets/icons/notification-20-20.svg';
 import { Dropdown, Popover } from 'shared/ui/Popups';
+import { NotificationList } from 'entities/Notification';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -63,7 +64,7 @@ const Navbar = ({ className }: NavbarProps) => {
 
                     )}
                     >
-                        123
+                        <NotificationList />
                     </Popover>
 
                     <Dropdown
