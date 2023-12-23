@@ -1,6 +1,8 @@
-import { useTheme } from 'app/providers/ThemeProvider';
 import {
-    useState, useRef, useEffect, useCallback,
+    useCallback,
+    useEffect,
+    useRef,
+    useState,
 } from 'react';
 
 interface Props{
