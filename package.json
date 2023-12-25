@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
+    "@react-spring/web": "^9.7.3",
     "@reduxjs/toolkit": "^1.9.5",
     "@storybook/testing-library": "^0.2.0",
     "@svgr/webpack": "^8.0.1",
@@ -38,6 +39,7 @@
     "@types/react-virtualized": "^9.21.26",
     "@types/webpack": "^5.28.1",
     "@types/webpack-dev-server": "^4.7.2",
+    "@use-gesture/react": "^10.3.0",
     "axios": "^1.4.0",
     "css-loader": "^6.8.1",
     "eslint": "^8.43.0",
