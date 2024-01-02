@@ -88,4 +88,7 @@
 76.  add isolatedModules true
 77. add circular dependency plugin 
 78. add babel loader and plugin babelRemovePropsPlugin 
-79. add Popover component use in Navbar component 21:00
+79. add Popover component use in Navbar component
+80. add Drawer and Overlay , react device detect 
+81. refracting useModal => Modal and Drawer 
+82  add provider that not include webpack ,add react spring and use-gesture 12:00 
