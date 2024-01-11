@@ -1,11 +1,11 @@
 import React, {
     FC, useCallback, useEffect, useRef, useState,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/className';
-import { useTheme } from 'app/providers/ThemeProvider';
-import { Portal } from 'shared/ui/Portal/Portal';
-import Overlay from 'shared/ui/Overlay/Overlay';
-import { useModal } from 'shared/lib/hooks/useModal/useModal';
+import { classNames } from '@/shared/lib/classNames/className';
+import { useTheme } from '@/app/providers/ThemeProvider';
+import { Portal } from '@/shared/ui/Portal/Portal';
+import Overlay from '@/shared/ui/Overlay/Overlay';
+import { useModal } from '@/shared/lib/hooks/useModal/useModal';
 import cls from './Modal.module.scss';
 
 interface ModalProps{

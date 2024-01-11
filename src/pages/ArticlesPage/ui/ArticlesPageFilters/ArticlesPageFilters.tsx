@@ -1,22 +1,22 @@
 import React, { useCallback } from 'react';
-import { classNames } from 'shared/lib/classNames/className';
+import { classNames } from '@/shared/lib/classNames/className';
 import { useSelector } from 'react-redux';
 import {
     getArticlesPageOrder, getArticlesPageSearch, getArticlesPageSort, getArticlesPageType, getArticlesPageView,
-} from 'pages/ArticlesPage/model/selectors/articlesPageSelectors';
-import { ArticleSortField, ArticleType, ArticleView } from 'entities/Article';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { articlesPageActions } from 'pages/ArticlesPage/model/slices/articlesPageSlice';
-import { ArticleViewSelector } from 'entities/Article/ui/ArticleViewSelector/ArticleViewSelector';
-import { Select } from 'shared/ui/Select/Select';
+} from '@/pages/ArticlesPage/model/selectors/articlesPageSelectors';
+import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { articlesPageActions } from '@/pages/ArticlesPage/model/slices/articlesPageSlice';
+import { ArticleViewSelector } from '@/entities/Article/ui/ArticleViewSelector/ArticleViewSelector';
+import { Select } from '@/shared/ui/Select/Select';
 import { useTranslation } from 'react-i18next';
-import { Card } from 'shared/ui/Card/Card';
-import { Input } from 'shared/ui/Input/Input';
-import { ArticleSortSelector } from 'entities/Article/ui/ArticleSortSelector/ArticleSortSelector';
-import { SortOrder } from 'shared/types';
-import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
-import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
-import { ArticleTypeTabs } from 'entities/Article/ui/ArticleTypeTabs/ArticleTypeTabs';
+import { Card } from '@/shared/ui/Card/Card';
+import { Input } from '@/shared/ui/Input/Input';
+import { ArticleSortSelector } from '@/entities/Article/ui/ArticleSortSelector/ArticleSortSelector';
+import { SortOrder } from '@/shared/types';
+import { fetchArticlesList } from '@/pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
+import { ArticleTypeTabs } from '@/entities/Article/ui/ArticleTypeTabs/ArticleTypeTabs';
 import styles from './ArticlesPageFilters.module.scss';
 
 interface Props{

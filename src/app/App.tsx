@@ -1,11 +1,11 @@
 import './styles/index.scss';
-import { classNames } from 'shared/lib/classNames/className';
-import { Navbar } from 'widjet/Navbar';
-import { Sidebar } from 'widjet/Sidebar';
 import { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData, getUserInited, userActions } from 'entities/User';
-import { PageLoader } from 'shared/ui/PageLoader';
+import { classNames } from '@/shared/lib/classNames/className';
+import { Navbar } from '@/widjet/Navbar';
+import { Sidebar } from '@/widjet/Sidebar';
+import { getUserAuthData, getUserInited, userActions } from '@/entities/User';
+import { PageLoader } from '@/shared/ui/PageLoader';
 import { AppRouter } from './providers/Providers/router';
 import { useTheme } from './providers/ThemeProvider';
 

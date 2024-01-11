@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Dispatch } from '@reduxjs/toolkit';
-import { StateSchema } from 'app/providers/StoreProvider';
-import { TestAsyncThunk } from 'shared/lib/test/TestAsyncThunk/TestAsyncThunk';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { TestAsyncThunk } from '@/shared/lib/test/TestAsyncThunk/TestAsyncThunk';
 import { userActions } from '../../../../../entities/User';
 import { loginByUsername } from './loginByUsername';
 

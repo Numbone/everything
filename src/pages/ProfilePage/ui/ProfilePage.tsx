@@ -1,13 +1,13 @@
 import { FC, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/className';
+import { classNames } from '@/shared/lib/classNames/className';
 import {
     DynamicModuleLoader,
     ReducersList,
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Text, TextTheme } from '@/shared/ui/Text/Text';
 import { useParams } from 'react-router-dom';
 import { Currency } from '../../../entities/Currency';
 import { Country } from '../../../entities/Country';

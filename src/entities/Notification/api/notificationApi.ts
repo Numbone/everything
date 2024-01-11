@@ -1,4 +1,4 @@
-import { rtkApi } from 'shared/api/rtkApi';
+import { rtkApi } from '@/shared/api/rtkApi';
 import { NotificationState } from '../modal/types/notifications';
 
 export const notificationsApi = rtkApi.injectEndpoints({

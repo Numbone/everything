@@ -1,4 +1,4 @@
-import { StateSchema } from 'app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider';
 import { ArticleSortField, ArticleType } from '../../../../entities/Article/model/types/article';
 import { ArticleView } from '../../../../entities/Article';
 

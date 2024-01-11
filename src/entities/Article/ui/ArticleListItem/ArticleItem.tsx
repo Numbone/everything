@@ -1,15 +1,15 @@
 import React, { HTMLAttributeAnchorTarget, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/className';
-import { Card } from 'shared/ui/Card/Card';
-import { Text } from 'shared/ui';
-import { Icon } from 'shared/ui/Icon/Icon';
-import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
+import { classNames } from '@/shared/lib/classNames/className';
+import { Card } from '@/shared/ui/Card/Card';
+import { Text } from '@/shared/ui';
+import { Icon } from '@/shared/ui/Icon/Icon';
+import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import { useNavigate } from 'react-router-dom';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import Button, { ButtonTheme } from 'shared/ui/Button/Button';
-import AppLink from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import Button, { ButtonTheme } from '@/shared/ui/Button/Button';
+import AppLink from '@/shared/ui/AppLink/AppLink';
 import styles from './ArticleListItem.module.scss';
 import {
     Article, ArticleBlockType, ArticleTextBlock, ArticleView,

@@ -1,4 +1,4 @@
-import { Mods, classNames } from 'shared/lib/classNames/className';
+import { Mods, classNames } from '@/shared/lib/classNames/className';
 import { ChangeEvent, memo, useMemo } from 'react';
 import styles from './Select.module.scss';
 

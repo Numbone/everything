@@ -1,4 +1,4 @@
-import { StateSchema } from 'app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider';
 import { Currency } from '../../../../Currency';
 import { Country } from '../../../../Country';
 import { getProfileForm } from './getProfileForm';

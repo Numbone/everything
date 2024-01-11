@@ -1,8 +1,8 @@
-import { NotificationState } from 'entities/Notification/modal/types/notifications';
+import { NotificationState } from '@/entities/Notification/modal/types/notifications';
 import React from 'react';
-import { classNames } from 'shared/lib/classNames/className';
-import { Card, CardTheme } from 'shared/ui/Card/Card';
-import { Text } from 'shared/ui';
+import { classNames } from '@/shared/lib/classNames/className';
+import { Card, CardTheme } from '@/shared/ui/Card/Card';
+import { Text } from '@/shared/ui';
 import cls from './NotificationItem.module.scss';
 
 interface Props{

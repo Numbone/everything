@@ -1,8 +1,8 @@
-import { useGetNotificationsQuery } from 'entities/Notification/api/notificationApi';
+import { useGetNotificationsQuery } from '@/entities/Notification/api/notificationApi';
 import React from 'react';
-import { classNames } from 'shared/lib/classNames/className';
-import { VStack } from 'shared/ui/Stack/VStack/VStack';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { classNames } from '@/shared/lib/classNames/className';
+import { VStack } from '@/shared/ui/Stack/VStack/VStack';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 import cls from './NotificationList.module.scss';
 import { NotificationItem } from '../NotificationItem/NotificationItem';
 

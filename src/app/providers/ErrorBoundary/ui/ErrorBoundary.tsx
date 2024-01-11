@@ -1,7 +1,7 @@
 import React, {
     Component, ErrorInfo, ReactNode, Suspense,
 } from 'react';
-import { ErrorPage } from 'widjet/ErrorPage';
+import { ErrorPage } from '@/widjet/ErrorPage';
 // import { withTranslation } from 'react-i18next';
 
 interface Props {

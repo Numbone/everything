@@ -9,6 +9,6 @@
     right: 0;
     /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
     left: 0;
-    z-index: -1;
+    z-index: (--overlay-z-index);
     cursor: pointer;
 }

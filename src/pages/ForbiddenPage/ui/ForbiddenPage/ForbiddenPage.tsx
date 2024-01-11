@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/className';
+import { classNames } from '@/shared/lib/classNames/className';
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import cls from './ForbiddenPage.module.scss';

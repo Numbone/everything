@@ -2,17 +2,17 @@ import {
     AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-import { CounterSchema } from 'entities/Counter';
-import { ProfileSchema } from 'entities/Profile';
-import { UserSchema } from 'entities/User';
-import { LoginSchema } from 'features';
+import { CounterSchema } from '@/entities/Counter';
+import { ProfileSchema } from '@/entities/Profile';
+import { UserSchema } from '@/entities/User';
+import { LoginSchema } from '@/features';
 import { NavigateOptions, To } from 'react-router-dom';
-import { ArticleDetailsSchema } from 'entities/Article';
-import { ArticleDetailsCommentSchema, ArticleDetailsPageSchema, ArticleDetailsRecommendationsSchema } from 'pages/ArticleDetailsPage';
-import { AddCommentFormSchema } from 'features/addCommentForm';
-import { ArticlesPageSchema } from 'pages/ArticlesPage/model/types/articlesPageSchema';
-import { ScrollRestorationSchema } from 'features/ScrollRestoration';
-import { rtkApi } from 'shared/api/rtkApi';
+import { ArticleDetailsSchema } from '@/entities/Article';
+import { ArticleDetailsCommentSchema, ArticleDetailsPageSchema, ArticleDetailsRecommendationsSchema } from '@/pages/ArticleDetailsPage';
+import { AddCommentFormSchema } from '@/features/addCommentForm';
+import { ArticlesPageSchema } from '@/pages/ArticlesPage/model/types/articlesPageSchema';
+import { ScrollRestorationSchema } from '@/features/ScrollRestoration';
+import { rtkApi } from '@/shared/api/rtkApi';
 
 export interface StateSchema{
     counter:CounterSchema

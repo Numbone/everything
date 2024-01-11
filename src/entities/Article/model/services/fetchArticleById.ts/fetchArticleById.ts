@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThunkExtraArg } from 'app/providers/StoreProvider';
+import { ThunkExtraArg } from '@/app/providers/StoreProvider';
 import { Article } from '../../types/article';
 
 export const fetchArticleById = createAsyncThunk<Article, string, { rejectValue: string, extra:ThunkExtraArg}>(

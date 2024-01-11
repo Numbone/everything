@@ -1,7 +1,7 @@
-import { userActions } from 'entities/User';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
-import { TestAsyncThunk } from 'shared/lib/test/TestAsyncThunk/TestAsyncThunk';
+import { userActions } from '@/entities/User';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import { TestAsyncThunk } from '@/shared/lib/test/TestAsyncThunk/TestAsyncThunk';
 import { fetchProfileData } from './fetchProfileData';
 
 const data = {

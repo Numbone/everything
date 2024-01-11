@@ -5,10 +5,10 @@ import {
     ListRowProps,
     WindowScroller,
 } from 'react-virtualized';
-import { classNames } from 'shared/lib/classNames/className';
-import { Text } from 'shared/ui';
-import { TextSize } from 'shared/ui/Text/Text';
-import { PAGE_ID } from 'widjet/Page/Page';
+import { classNames } from '@/shared/lib/classNames/className';
+import { Text } from '@/shared/ui';
+import { TextSize } from '@/shared/ui/Text/Text';
+import { PAGE_ID } from '@/widjet/Page/Page';
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';

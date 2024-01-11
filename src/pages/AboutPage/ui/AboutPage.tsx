@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Page } from 'widjet/Page/Page';
+import { Page } from '@/widjet/Page/Page';
 
 interface AboutPageProps{
     className?:string;

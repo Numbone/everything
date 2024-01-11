@@ -1,7 +1,7 @@
 import React, {
     InputHTMLAttributes, memo, useEffect, useRef, useState,
 } from 'react';
-import { Mods, classNames } from 'shared/lib/classNames/className';
+import { Mods, classNames } from '@/shared/lib/classNames/className';
 import cls from './Input.module.scss';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readonly'>

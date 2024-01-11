@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ListBox } from 'shared/ui/Popups';
-import { HStack } from 'shared/ui/Stack/HStack/HStack';
-import { Page } from 'widjet/Page/Page';
+import { ListBox } from '@/shared/ui/Popups';
+import { HStack } from '@/shared/ui/Stack/HStack/HStack';
+import { Page } from '@/widjet/Page/Page';
 
 interface MainPageProps{
     className?:string;
