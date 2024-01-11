@@ -1,5 +1,5 @@
-import { useTheme } from '@/app/providers/ThemeProvider';
 import React, { memo, useCallback, useEffect } from 'react';
+import { useTheme } from '@/app/providers/ThemeProvider';
 import { classNames } from '@/shared/lib/classNames/className';
 import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
 import Overlay from '../Overlay/Overlay';
