@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
-import { classNames } from '@/shared/lib/classNames/className';
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
+import { classNames } from '@/shared/lib/classNames/className';
 import {
     getArticlesPageOrder, getArticlesPageSearch, getArticlesPageSort, getArticlesPageType, getArticlesPageView,
 } from '@/pages/ArticlesPage/model/selectors/articlesPageSelectors';
@@ -9,7 +10,6 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { articlesPageActions } from '@/pages/ArticlesPage/model/slices/articlesPageSlice';
 import { ArticleViewSelector } from '@/entities/Article/ui/ArticleViewSelector/ArticleViewSelector';
 import { Select } from '@/shared/ui/Select/Select';
-import { useTranslation } from 'react-i18next';
 import { Card } from '@/shared/ui/Card/Card';
 import { Input } from '@/shared/ui/Input/Input';
 import { ArticleSortSelector } from '@/entities/Article/ui/ArticleSortSelector/ArticleSortSelector';

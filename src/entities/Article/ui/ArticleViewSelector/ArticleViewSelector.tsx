@@ -33,10 +33,12 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
 
     return (
         <div className={classNames(cls.ArticleViewSelector, {}, [className])}>
-            {viewTypes.map((viewType) => (
+            {viewTypes.map((viewType, index) => (
                 <Button
                     theme={ButtonTheme.CLEAR}
                     onClick={onClick(viewType.view)}
+                    // eslint-disable-next-line react/no-array-index-key
+                    key={index}
                 >
                     <Icon
                         Svg={viewType.icon}

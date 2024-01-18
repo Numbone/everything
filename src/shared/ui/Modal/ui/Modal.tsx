@@ -9,10 +9,10 @@ import { useModal } from '@/shared/lib/hooks/useModal/useModal';
 import cls from './Modal.module.scss';
 
 interface ModalProps{
-    className:string|'';
+    className?:string|'';
     children?:React.ReactNode;
     isOpen:boolean;
-    onClose:()=>void;
+    onClose?:()=>void;
     lazy?:boolean;
 }
 
