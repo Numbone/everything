@@ -1,12 +1,12 @@
 import {
     memo, MutableRefObject, ReactNode, useRef, UIEvent,
 } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/className';
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { uiActions } from '@/features/ScrollRestoration';
-import { useLocation } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import { getUIScrollByPath } from '@/features/ScrollRestoration/model/selectors/getUIScroll';
 import { StateSchema } from '@/app/providers';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';

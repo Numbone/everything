@@ -1,16 +1,16 @@
+import React, { useCallback } from 'react';
+import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { CommentList } from '@/entities/Comment';
 import { AddCommentForm } from '@/features/addCommentForm';
-import React, { useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/className';
 import { Text, TextSize } from '@/shared/ui/Text/Text';
 import { getArticleCommentsIsLoading } from '@/pages/ArticleDetailsPage/model/selectors/comment';
 import { addCommentForArticle } from '@/pages/ArticleDetailsPage/model/service/addCommentForArticle/addCommentForArticle';
 import { fetchCommentsByArticleId } from '@/pages/ArticleDetailsPage/model/service/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleComments } from '@/pages/ArticleDetailsPage/model/slice/articleCommentSlice';
-import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { useTranslation } from 'react-i18next';
 import cls from './ArticleDetailComments.module.scss';
 
 interface Props{

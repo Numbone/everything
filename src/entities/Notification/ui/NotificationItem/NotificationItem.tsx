@@ -1,5 +1,5 @@
-import { NotificationState } from '@/entities/Notification/modal/types/notifications';
 import React from 'react';
+import { NotificationState } from '@/entities/Notification/modal/types/notifications';
 import { classNames } from '@/shared/lib/classNames/className';
 import { Card, CardTheme } from '@/shared/ui/Card/Card';
 import { Text } from '@/shared/ui';

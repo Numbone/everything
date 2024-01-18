@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/className';
 import { Modal } from '@/shared/ui/Modal';
-import { useTranslation } from 'react-i18next';
 import cls from './LoginModal.module.scss';
 import { LoginFormAsync } from '../LoginForm/LoginFrom.async';
 

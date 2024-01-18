@@ -1,9 +1,9 @@
-import { getUserAuthData } from '@/entities/User';
-import { UserRole } from '@/entities/User/model/type/user';
 import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { useMemo } from 'react';
+import { getUserAuthData } from '@/entities/User';
+import { UserRole } from '@/entities/User/model/type/user';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { getUserRoles } from '@/entities/User/model/selectors/roleSelector/roleSelector';
 
 interface Props{

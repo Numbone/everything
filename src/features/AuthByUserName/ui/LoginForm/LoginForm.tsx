@@ -2,10 +2,10 @@ import React, {
     FC, memo, useCallback, useEffect,
 } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/className';
 import Button, { ButtonTheme } from '@/shared/ui/Button/Button';
 import { Input } from '@/shared/ui/Input/Input';
-import { useSelector } from 'react-redux';
 import { loginActions, loginReducer } from '@/features/AuthByUserName/model/slice/loginSlice';
 import { Text, TextTheme } from '@/shared/ui/Text/Text';
 import { getLoginError } from '@/features/AuthByUserName/model/selectors/getLoginError/getLoginError';

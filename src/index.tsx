@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client';
-import { StoreProvider } from '@/app/providers/StoreProvider';
 import { BrowserRouter } from 'react-router-dom';
+import { StoreProvider } from '@/app/providers/StoreProvider';
 import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import { ErrorBoundary } from '@/app/providers/ErrorBoundary';
 import App from './app/App';

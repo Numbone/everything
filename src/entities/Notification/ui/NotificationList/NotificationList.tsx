@@ -1,5 +1,5 @@
-import { useGetNotificationsQuery } from '@/entities/Notification/api/notificationApi';
 import React from 'react';
+import { useGetNotificationsQuery } from '@/entities/Notification/api/notificationApi';
 import { classNames } from '@/shared/lib/classNames/className';
 import { VStack } from '@/shared/ui/Stack/VStack/VStack';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';

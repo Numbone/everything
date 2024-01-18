@@ -1,9 +1,9 @@
 import {
     ReducersMapObject, combineReducers, configureStore, getDefaultMiddleware,
 } from '@reduxjs/toolkit';
-import { $api } from '@/shared/api/api';
 import { NavigateOptions, To } from 'react-router-dom';
 import { CombinedState, Reducer } from 'redux';
+import { $api } from '@/shared/api/api';
 import { uiReducer } from '@/features/ScrollRestoration';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { userReducer } from '../../../../entities/User';

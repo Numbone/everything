@@ -1,6 +1,6 @@
 import React, { FC, memo } from 'react';
-import { classNames } from '@/shared/lib/classNames/className';
 import { useTranslation } from 'react-i18next';
+import { classNames } from '@/shared/lib/classNames/className';
 import Button, { ButtonTheme } from '@/shared/ui/Button/Button';
 import cls from './LangSwitcher.module.scss';
 

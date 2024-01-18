@@ -1,12 +1,12 @@
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
 import { ArticleList } from '@/entities/Article';
 import {
     getArticlesPageError, getArticlesPageInited, getArticlesPageIsLoading, getArticlesPageView,
 } from '@/pages/ArticlesPage/model/selectors/articlesPageSelectors';
 import { initArticlesPage } from '@/pages/ArticlesPage/model/services/initedArticlePage/initedArticlePage';
 import { getArticles } from '@/pages/ArticlesPage/model/slices/articlesPageSlice';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
-import { useSearchParams } from 'react-router-dom';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 
