@@ -1,3 +1,7 @@
+import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { ArticleDetails } from '@/entities/Article';
 import { ArticleRecommendationList } from '@/features/articleRecommendationList';
 import { getArticleCommentsIsLoading } from '@/pages/ArticleDetailsPage/model/selectors/comment';
@@ -5,10 +9,6 @@ import { addCommentForArticle } from '@/pages/ArticleDetailsPage/model/service/a
 import { fetchCommentsByArticleId } from '@/pages/ArticleDetailsPage/model/service/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/model/slice';
 import { getArticleComments } from '@/pages/ArticleDetailsPage/model/slice/articleCommentSlice';
-import { memo, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/className';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -16,6 +16,7 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import ArticleDetailComments from '../ArticleDetailComments/ArticleDetailComments';
 import { ArticleDetailsPageHeader } from '../ArticleDetailPageHeader/ArticleDetailPageHeader';
 import cls from './ArticleDetailsPage.module.scss';
+import { ArticleRating } from '@/features/articleRating';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -30,13 +31,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     const dispatch = useAppDispatch();
     const { t } = useTranslation('article');
     const { id } = useParams<{id:string}>();
-    const comments = useSelector(getArticleComments.selectAll);
-    // const recommendation = useSelector(getArticleRecommendations.selectAll);
-    const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
-    // const recommendationIsLoading = useSelector(getArticleRecommendationsIsLoading);
-    const onSendComment = useCallback((text: string) => {
-        dispatch(addCommentForArticle(text));
-    }, [dispatch]);
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
         // dispatch(fetchArticleRecommendations());
@@ -55,6 +49,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
             <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
+                <ArticleRating articleId={id} />
                 <ArticleRecommendationList />
                 {/* <Text size={TextSize.L} className={cls.commentTitle} title={t('article.recommendation')} />
                 <ArticleList
