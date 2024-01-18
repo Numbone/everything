@@ -94,3 +94,4 @@
 82. add provider that not include webpack ,add react spring and use-gesture 
 83. add ts-morph and alias 
 84. add browserslist
+85. add vite to project 
